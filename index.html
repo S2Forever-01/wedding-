@@ -65,10 +65,10 @@
       <div class="flower-deco">-</div>
       
       <p class="invitation-text" style="text-align: left; font-size: 14px; line-height: 1.8; display: inline-block; width: 100%; max-width: 500px; margin: 0 auto; word-break: keep-all;">
-      서로를 만나 <span style="color: #e58f8f;">세상</span>이 환히 밝아졌습니다.<br>
+      서로를 만나 <span style="color: #e58f8f;">세</span>상이 환히 밝아졌습니다.<br>
       오랜 시간 기<span style="color: #e58f8f;">원</span>하던 소중한 인연과 하나되어,<br>
-      <span style="color: #e58f8f;">영원</span>토록 함께할 것을 여러분 앞에서 약속하려 합니다.<br>
-      <span style="color: #e58f8f;">화사</span>하게 물든 예쁜 가을의 어느날,<br>
+      <span style="color: #e58f8f;">영</span>원토록 함께할 것을 여러분 앞에서 약속하려 합니다.<br>
+      <span style="color: #e58f8f;">화</span>사하게 물든 예쁜 가을의 어느날,<br>
       <br>
       <span style="color: #e58f8f;">세원</span>과 <span style="color: #e58f8f;">영화</span>라는 이름으로 함께 그릴 이야기의 첫 장면에<br>
       소중한 분들을 모시고 행복한 시작을 함께하고자 합니다.<br>
@@ -118,26 +118,44 @@
       </div>
     </section>
     <section class="content-section location-section">
-      <span class="section-sub">LOCATION</span>
-      <h2 class="section-title">오시는 길</h2>
-      <div class="map-area">
-        <div id="daumRoughmapContainer1783290137454" class="root_daum_roughmap root_daum_roughmap_landing">
-        </div>
-      <div class="location-details">
-        <h3 class="hall-name">국방컨벤션</h3>
-        <div class="transport-info">
-          <p><b>지하철</b> 지하철 안내 문구 작성<br>
-          <span class="transport-indent">지하철 안내 문구 작성</span></p>
-          <p><b>버 스</b> 버스 안내 문구 작성 </p>
-          <p><b>주 차</b> 주차 안내 문구 작성</p>
-        </div>
+    <span class="section-sub">LOCATION</span>
+    <h2 class="section-title">오시는 길</h2>
+    
+    <!-- 지도 영역 -->
+    <div class="map-area">
+      <div id="daumRoughmapContainer1783290137454" class="root_daum_roughmap root_daum_roughmap_landing" style="margin: 0 auto; max-width: 100%;"></div>
+    </div> <!-- 💡 빠졌던 </div> 태그를 닫아주었습니다 -->
+  
+    <!-- 식장 상세 정보 -->
+    <div class="location-details">
+      <h3 class="hall-name" style="margin-top: 20px; font-size: 18px; font-weight: bold;">국방컨벤션</h3>
+      <div class="transport-info" style="font-size: 14px; line-height: 1.8; text-align: left; margin: 15px 0;">
+        <p><b>지하철</b> 지하철 안내 문구 작성<br>
+        <span class="transport-indent" style="display: inline-block; padding-left: 10px;">지하철 안내 문구 작성</span></p>
+        <p><b>버 스</b> 버스 안내 문구 작성 </p>
+        <p><b>주 차</b> 주차 안내 문구 작성</p>
       </div>
-      <div class="map-buttons">
-        <a href="https://place.map.kakao.com/152313844" target="_blank" class="map-btn kakao">카카오맵</a>
-        <a href="hhttps://naver.me/GI3hfgsb" target="_blank" class="map-btn naver">네이버지도</a>
-        <a href="https://tmap.life/bb3de44a" target="_blank" class="map-btn tmap">T맵</a>
-      </div>
-    </section>
+    </div>
+  
+    <!-- 지도 앱 바로가기 버튼 -->
+    <div class="map-buttons" style="margin-top: 15px;">
+      <a href="https://place.map.kakao.com/152313844" target="_blank" class="map-btn kakao">카카오맵</a>
+      <a href="https://naver.me/GI3hfgsb" target="_blank" class="map-btn naver">네이버지도</a> <!-- 💡 hhttps -> https 수정 -->
+      <a href="https://tmap.life/bb3de44a" target="_blank" class="map-btn tmap">T맵</a>
+    </div>
+  </section>
+  
+  <!-- ================= 카카오맵 구동 스크립트 (꼭 포함되어야 합니다) ================= -->
+  <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+  
+  <script charset="UTF-8">
+    new daum.roughmap.Lander({
+      "timestamp" : "1783290137454",
+      "key" : "qqc6yehdknz",
+      "mapWidth" : "100%",  /* 모바일 화면 맞춤 */
+      "mapHeight" : "280"   /* 적당한 높이 조절 */
+    }).render();
+  </script>
     <section class="content-section account-section">
       <span class="section-sub">INFORMATION</span>
       <h2 class="section-title">마음 전하실 곳</h2>
