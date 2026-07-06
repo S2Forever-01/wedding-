@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>권세원 · 김영화 결혼합니다</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="권세원 ♡ 김영화 결혼합니다">
+<meta property="og:description" content="2026년 11월 1일 오후 1시 결혼식에 초대합니다.">
+<meta property="og:image" content="images/venue.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ENVELOPE INTRO -->
+<div id="envelope" class="envelope-overlay" onclick="openEnvelope()">
+  <div class="envelope-box">
+    <div class="envelope-back"></div>
+    <div class="envelope-flap" id="envelope-flap"></div>
+    <div class="envelope-letter">
+      <div class="envelope-names">권세원 <b>·</b> 김영화</div>
+      <div class="envelope-date">2026. 11. 01</div>
+    </div>
+  </div>
+  <div class="tap-notice">TAP TO OPEN</div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="page">
+  <div class="card">
+
+    <!-- STICKY MUSIC BAR -->
+    <div class="music-bar">
+      <audio id="bgm" loop>
+        <source src="music/bgm.mp3" type="audio/mp3">
+      </audio>
+      <button id="music-btn" onclick="toggleMusic()">🎵 <span id="music-label">Off</span></button>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero" data-screen-label="Hero">
+      <div class="hero-sub">THE WEDDING DAY</div>
+      <div class="hero-names">권세원 · 김영화</div>
+      <div class="hero-info">2026. 11. 01 일요일 오후 1시 00분<br>국방컨벤션 | 에메랄드홀</div>
+    </div>
+    <div class="hero-photo">
+      <img src="images/main.jpg" alt="메인 웨딩 사진">
+    </div>
+
+    <!-- D-DAY COUNTDOWN -->
+    <div class="countdown" data-screen-label="Countdown">
+      <div class="countdown-label">신랑 권세원과 신부 김영화의 결혼식까지</div>
+      <div class="countdown-badge" id="dday-badge">D-DAY 계산중...</div>
+      <div class="countdown-grid">
+        <div class="time-box"><span id="timer-d">00</span><label>DAYS</label></div>
+        <div class="time-box"><span id="timer-h">00</span><label>HOURS</label></div>
+        <div class="time-box"><span id="timer-m">00</span><label>MIN</label></div>
+        <div class="time-box"><span id="timer-s">00</span><label>SEC</label></div>
+      </div>
+    </div>
+
+    <!-- TAB NAV -->
+    <div class="tabs" data-screen-label="Tabs" id="tab-nav">
+      <button class="tab-btn active" data-tab="0" onclick="setTab(0)">인사말</button>
+      <button class="tab-btn" data-tab="1" onclick="setTab(1)">사진첩</button>
+      <button class="tab-btn" data-tab="2" onclick="setTab(2)">교통</button>
+      <button class="tab-btn" data-tab="3" onclick="setTab(3)">식장</button>
+      <button class="tab-btn" data-tab="4" onclick="setTab(4)">마음 전하실 곳</button>
+      <button class="tab-btn" data-tab="5" onclick="setTab(5)">참석여부</button>
+    </div>
+
+    <!-- TAB PANEL 0: INVITATION -->
+    <div class="tab-panel" data-tab-panel="0" data-screen-label="Invitation">
+      <div class="panel-sub">INVITATION</div>
+      <div class="panel-title">소중한 분들을 초대합니다</div>
+      <p class="invitation-text">
+        서로를 만나 <span class="hl">세</span>상이 환히 밝아졌습니다.<br>
+        오랜 시간 기<span class="hl">원</span>하던 소중한 인연과 하나되어,<br>
+        <span class="hl">영</span>원토록 함께할 것을 여러분 앞에서 약속하려 합니다.<br>
+        <span class="hl">화</span>사하게 물든 예쁜 가을의 어느날,<br>
+        <br>
+        <span class="hl">세원</span>과 <span class="hl">영화</span>라는 이름으로 함께 그릴 이야기의 첫 장면에<br>
+        소중한 분들을 모시고 행복한 시작을 함께하고자 합니다.<br><br>
+        귀한 걸음 하시어 저희의 새로운 시작을<br>
+        따뜻한 마음으로 축복해 주시면 감사하겠습니다.
+      </p>
+      <div class="family-relations">
+        <div><b>❋권기영 · 최현순</b> 의 차남 <span class="name-hl">권세원</span></div>
+        <div><b>&nbsp;김성호 · 최순정</b> 의 장녀 <span class="name-hl">김영화</span></div>
+      </div>
+    </div>
+
+    <!-- TAB PANEL 1: GALLERY -->
+    <div class="tab-panel" data-tab-panel="1" data-screen-label="Gallery" style="display:none;">
+      <div class="panel-sub">GALLERY</div>
+      <div class="panel-title">우리의 아름다운 순간</div>
+      <div class="gallery-grid">
+        <img src="images/photo1.jpg" alt="사진 1" onclick="openModal(0)">
+        <img src="images/photo2.jpg" alt="사진 2" onclick="openModal(1)">
+        <img src="images/photo3.jpg" alt="사진 3" onclick="openModal(2)">
+        <img src="images/photo4.jpg" alt="사진 4" onclick="openModal(3)">
+        <img src="images/photo5.jpg" alt="사진 5" onclick="openModal(4)">
+        <img src="images/photo6.jpg" alt="사진 6" onclick="openModal(5)">
+        <img src="images/photo7.jpg" alt="사진 7" onclick="openModal(6)">
+        <img src="images/photo8.jpg" alt="사진 8" onclick="openModal(7)">
+        <img src="images/photo9.jpg" alt="사진 9" onclick="openModal(8)">
+      </div>
+    </div>
+
+    <!-- TAB PANEL 2: TRANSPORT -->
+    <div class="tab-panel" data-tab-panel="2" data-screen-label="Transport" style="display:none;">
+      <div class="panel-sub">TRANSPORTATION</div>
+      <div class="panel-title">교통 안내</div>
+      <div class="info-list">
+        <div><span class="info-label">주&nbsp;&nbsp;&nbsp;&nbsp;소</span> 서울 용산구 이태원로 22</div>
+        <div><span class="info-label">지 하 철</span> <br> 4/6호선 삼각지역 13번 출구 (도보 5분)<br>6호선 녹사평역 4번 출구 (도보 9분)</div>
+        <div><span class="info-label">주&nbsp;&nbsp;&nbsp;&nbsp;차</span> <br> 안내 데스크 차량 번호 등록 시 웨딩홀 2시간 무료 주차<br>만차 시 주차장 입구에서 전쟁기념관 주차장 안내문 수령 후 주차 가능</div>
+        <div><span class="info-label">서울역 이용 시</span> <br> 421번 버스 전쟁기념관 하차 (8분)<br>4호선 삼각지역 하차 (3분)</div>
+        <div><span class="info-label">셔틀버스</span> 신부측 대절 버스 창원시 왕복 운행 예정</div>
+      </div>
+      <div class="map-box">
+        <img src="images/map.png" alt="map">
+      </div>
+      <div class="map-buttons">
+        <a href="https://place.map.kakao.com/152313844" target="_blank" class="map-btn kakao">카카오맵</a>
+        <a href="https://naver.me/GI3hfgsb" target="_blank" class="map-btn naver">네이버지도</a>
+        <a href="https://tmap.life/bb3de44a" target="_blank" class="map-btn tmap">T맵</a>
+      </div>
+    </div>
+
+    <!-- TAB PANEL 3: VENUE -->
+    <div class="tab-panel" data-tab-panel="3" data-screen-label="Venue" style="display:none;">
+      <div class="panel-sub">HALL INFORMATION</div>
+      <div class="panel-title">식장 안내</div>
+      <div class="venue-photo">
+        <img src="images/venue.jpg" alt="식장 참고 이미지">
+      </div>
+      <div class="info-list">
+        <div><span class="info-label">예&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;식</span> 1층 에메랄드홀</div>
+        <div><span class="info-label">피로연장</span> 2층 태극홀 · 3층 충무홀 (미정)<br>이용 시간은 오후 12시 15 분 ~ 2시 45분입니다. </div>        <div class="tip-box">Tip! 식장 맞은편 전쟁기념관 공원이 예쁘고 산책하기 좋아요 ♡</div>
+      </div>
+    </div>
+
+    <!-- TAB PANEL 4: GIFT -->
+    <div class="tab-panel" data-tab-panel="4" data-screen-label="Gift" style="display:none;">
+      <div class="panel-sub">INFORMATION</div>
+      <div class="panel-title">마음 전하실 곳</div>
+      <p class="gift-intro">
+        참석이 어려우신 분들을 위해 비대면으로나마<br>마음을 전하실 수 있도록 안내드립니다.<br>보내주신 정성 소중히 간직하겠습니다.<br><br>
+      </p>
+
+      <div class="accordion">
+        <button class="accordion-header" onclick="toggleAccordion('groom')">
+          <span>신랑측 계좌번호</span><span class="arrow" id="groom-arrow">▲</span>
+        </button>
+        <div class="accordion-content" id="groom-content">
+          <div class="account-row">
+            <span>신랑 | 권세원<br><b>국민은행 734401-01-298850</b></span>
+            <button class="copy-btn" data-copy="국민은행 734401-01-298850" onclick="copyAccount(this)">복사</button>
+          </div>
+          <div class="account-row">
+            <span>혼주 | 최현순<br><b>국민은행 734401-01-254863</b></span>
+            <button class="copy-btn" data-copy="국민은행 734401-01-254863" onclick="copyAccount(this)">복사</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <button class="accordion-header" onclick="toggleAccordion('bride')">
+          <span>신부측 계좌번호</span><span class="arrow" id="bride-arrow">▲</span>
+        </button>
+        <div class="accordion-content" id="bride-content">
+          <div class="account-row">
+            <span>신부 | 김영화<br><b>우리은행 1002-253-203770</b></span>
+            <button class="copy-btn" data-copy="우리은행 1002-253-203770" onclick="copyAccount(this)">복사</button>
+          </div>
+          <div class="account-row">
+            <span>혼주 | 김성호<br><b>국민은행 654-21-0558-084</b></span>
+            <button class="copy-btn" data-copy="국민은행 654-21-0558-084" onclick="copyAccount(this)">복사</button>
+          </div>
+          <div class="account-row">
+            <span>혼주 | 최순정<br><b>우리은행 1002-749-477831</b></span>
+            <button class="copy-btn" data-copy="우리은행 1002-749-477831" onclick="copyAccount(this)">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB PANEL 5: RSVP -->
+    <div class="tab-panel" data-tab-panel="5" data-screen-label="RSVP" style="display:none;">
+      <div class="panel-sub">RSVP</div>
+      <div class="panel-title">참석여부</div>
+      <p class="rsvp-intro">
+        더 나은 예식 준비와 원활한 하객 맞이를 위해 <br>참석 여부를 미리 알려주시면 감사하겠습니다.<br><br>
+        소중한 시간을 내어 참석해 주시는 모든 분들을 <br>정성껏 모실 수 있도록 참석 여부를 선택해 주세요.
+      </p>
+      <form id="rsvp-form" class="rsvp-form" onsubmit="submitRsvp(event)">
+        <div class="rsvp-row">
+          <select id="rsvp-side" class="rsvp-select">
+            <option value="신랑측">신랑</option>
+            <option value="신부측">신부</option>
+          </select>
+          <span class="rsvp-side-label">측 성함</span>
+        </div>
+        <input type="text" id="rsvp-name" class="rsvp-input" placeholder="이름을 입력해주세요">
+        <div class="rsvp-attend-group">
+          <button type="button" class="rsvp-attend-btn" data-value="참석" onclick="selectAttendance(this)">참석</button>
+          <button type="button" class="rsvp-attend-btn" data-value="불참" onclick="selectAttendance(this)">불참</button>
+        </div>
+        <button type="submit" class="rsvp-submit-btn">제출하기</button>
+      </form>
+      <p id="rsvp-status" class="rsvp-status"></p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer" data-screen-label="Footer">
+      권세원 ♡ 김영화 · 2026. 11. 01
+    </div>
+
+  </div>
+</div>
+
+<!-- IMAGE MODAL -->
+<div id="image-modal" class="modal" onclick="closeModal()">
+  <span class="modal-close" onclick="closeModal()">&times;</span>
+  <button class="modal-arrow modal-arrow-left" onclick="modalNav(-1, event)">&#10094;</button>
+  <img class="modal-content" id="modal-img" alt="확대 이미지" onclick="event.stopPropagation()">
+  <button class="modal-arrow modal-arrow-right" onclick="modalNav(1, event)">&#10095;</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
