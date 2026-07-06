@@ -117,13 +117,17 @@ function submitRsvp(event) {
   submitBtn.disabled = true;
   status.textContent = '제출 중...';
 
-  const params = new URLSearchParams({ side, name, attendance: selectedAttendance });
+  const data = {
+    side: side,
+    name: name,
+    attend: selectedAttendance
+  };
 
   fetch(GOOGLE_SCRIPT_URL, {
     method: 'POST',
     mode: 'no-cors',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: params.toString(),
+    headers: { 'Content-Type': 'text/plain' },
+    body: JSON.stringify(data),
   })
     .then(() => {
       status.textContent = '제출이 완료되었습니다. 감사합니다 :)';
