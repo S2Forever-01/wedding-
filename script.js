@@ -84,7 +84,7 @@ function closeModal() {
 }
 
 // Replace with your deployed Google Apps Script Web App URL (see apps-script.gs).
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxiWovVA4BjyIELsj2WSrdZVInR9C5AUEZZgh7fUpB_j8nm_D6kZ5rZJNSdNStsESGg5g/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxDa9aNfsQIZfPA2NzK6eIEPYdSJoBmm-qxGme6qZFyyDmoUc449VXpmGxkKzA-Bqsgxw/exec';
 
 let selectedAttendance = null;
 
