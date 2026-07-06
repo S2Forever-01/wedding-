@@ -84,7 +84,7 @@ function closeModal() {
 }
 
 // Replace with your deployed Google Apps Script Web App URL (see apps-script.gs).
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxDa9aNfsQIZfPA2NzK6eIEPYdSJoBmm-qxGme6qZFyyDmoUc449VXpmGxkKzA-Bqsgxw/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyqwK0QAO29amne5IoSha782AHCmh4edg8oxTiS8HWyrwQODFsJuExWXsOwugyj5Okj-w/exec';
 
 let selectedAttendance = null;
 
@@ -118,9 +118,9 @@ function submitRsvp(event) {
   status.textContent = '제출 중...';
 
   const data = {
-    side: side,
-    name: name,
-    attend: selectedAttendance
+    type: side,      // 신랑/신부
+    name: name,      // 이름
+    attendance: selectedAttendance // 참석/불참
   };
 
   fetch(GOOGLE_SCRIPT_URL, {
