@@ -37,7 +37,7 @@
       <audio id="bgm" loop>
         <source src="music/bgm.mp3" type="audio/mp3">
       </audio>
-      <button id="music-btn" onclick="toggleMusic()">🎵 <span id="music-label">Off</span></button>
+      <button id="music-btn" onclick="toggleMusic()">🎵 <span id="music-label">On</span></button>
     </div>
 
     <!-- HERO -->
@@ -114,11 +114,11 @@
       <div class="panel-sub">TRANSPORTATION</div>
       <div class="panel-title">교통 안내</div>
 
-      <div style="text-align: center; margin-bottom: 20px; line-height: 1.5; color: #666;">
+      <div style="text-align: center; margin-bottom: 20px; line-height: 1.5; color: #666; font-size: 14px; font-family: 'Nanum Myeongjo', serif;">
     예식장 주변 교통이 혼잡하오니,<br>가능하시다면 대중교통 이용을 권장드립니다.
-      </div>  
+      </div>
       <div class="info-list">
-        <div><span class="info-label">주&nbsp;&nbsp;&nbsp;&nbsp;소</span> 서울 용산구 이태원로 22</div>
+        <div><span class="info-label">주&nbsp;&nbsp;&nbsp;&nbsp;소</span> 서울 용산구 이태원로 22, 국방컨벤션</div>
         <div><span class="info-label">지 하 철</span> <br> 4/6호선 삼각지역 13번 출구 (도보 5분)<br>6호선 녹사평역 4번 출구 (도보 9분)</div>
         <div><span class="info-label">주&nbsp;&nbsp;&nbsp;&nbsp;차</span> <br> 웨딩홀 2시간 무료 주차 (자동 등록)<br>※ 만차 시 주차장 입구에서 전쟁기념관 주차장 안내문 <br>수령 후 주차 가능합니다! (안내데스크 주차등록)</div>
         <div><span class="info-label">서울역 이용 시</span> <br> 421번 버스 전쟁기념관 하차 (8분)<br>4호선 삼각지역 하차 (3분)</div>
@@ -202,10 +202,10 @@
       </p>
       <form id="rsvp-form" class="rsvp-form" onsubmit="submitRsvp(event)">
         <div class="rsvp-row">
-          <select id="rsvp-side" class="rsvp-select">
-            <option value="신랑측">신랑</option>
-            <option value="신부측">신부</option>
-          </select>
+          <div class="rsvp-side-group">
+            <button type="button" class="rsvp-side-btn selected" data-value="신랑측" onclick="selectSide(this)">신랑</button>
+            <button type="button" class="rsvp-side-btn" data-value="신부측" onclick="selectSide(this)">신부</button>
+          </div>
           <span class="rsvp-side-label">측 성함</span>
         </div>
         <input type="text" id="rsvp-name" class="rsvp-input" placeholder="이름을 입력해주세요">

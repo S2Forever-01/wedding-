@@ -439,15 +439,28 @@ html, body {
   align-items: center;
   gap: 8px;
 }
-.rsvp-select {
+.rsvp-side-group {
+  display: flex;
   flex: 0 0 auto;
-  padding: 12px;
+  gap: 8px;
+}
+.rsvp-side-btn {
+  flex: 0 0 auto;
+  width: 70px;
+  padding: 12px 0;
   border: 1px solid #f6dbe3;
   border-radius: 8px;
-  font-size: 14px;
-  color: #4a3540;
   background: #fff;
+  color: #a5717f;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
   font-family: inherit;
+}
+.rsvp-side-btn.selected {
+  background: #f2a9bb;
+  color: #fff;
+  border-color: #f2a9bb;
 }
 .rsvp-side-label {
   font-size: 14px;

@@ -3,6 +3,13 @@ const WEDDING_TARGET = new Date('2026-11-01T13:00:00+09:00').getTime();
 function openEnvelope() {
   document.getElementById('envelope').classList.add('opened');
   document.getElementById('envelope-flap').classList.add('open');
+  const audio = document.getElementById('bgm');
+  const label = document.getElementById('music-label');
+  audio.play().then(() => {
+    label.textContent = 'On';
+  }).catch(() => {
+    label.textContent = 'Off';
+  });
 }
 
 function toggleMusic() {
@@ -86,7 +93,14 @@ function closeModal() {
 // Replace with your deployed Google Apps Script Web App URL (see apps-script.gs).
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyqwK0QAO29amne5IoSha782AHCmh4edg8oxTiS8HWyrwQODFsJuExWXsOwugyj5Okj-w/exec';
 
+let selectedSide = '신랑측';
 let selectedAttendance = null;
+
+function selectSide(btn) {
+  document.querySelectorAll('.rsvp-side-btn').forEach((b) => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  selectedSide = btn.dataset.value;
+}
 
 function selectAttendance(btn) {
   document.querySelectorAll('.rsvp-attend-btn').forEach((b) => b.classList.remove('selected'));
@@ -96,11 +110,14 @@ function selectAttendance(btn) {
 
 function submitRsvp(event) {
   event.preventDefault();
-  const side = document.getElementById('rsvp-side').value;
   const name = document.getElementById('rsvp-name').value.trim();
   const status = document.getElementById('rsvp-status');
   const submitBtn = event.target.querySelector('.rsvp-submit-btn');
 
+  if (!selectedSide) {
+    status.textContent = '신랑측 / 신부측을 선택해주세요.';
+    return;
+  }
   if (!name) {
     status.textContent = '성함을 입력해주세요.';
     return;
@@ -118,7 +135,7 @@ function submitRsvp(event) {
   status.textContent = '제출 중...';
 
   const data = {
-    type: side,      // 신랑/신부
+    type: selectedSide,      // 신랑/신부
     name: name,      // 이름
     attendance: selectedAttendance // 참석/불참
   };
@@ -133,7 +150,10 @@ function submitRsvp(event) {
       status.textContent = '제출이 완료되었습니다. 감사합니다 :)';
       event.target.reset();
       document.querySelectorAll('.rsvp-attend-btn').forEach((b) => b.classList.remove('selected'));
+      document.querySelectorAll('.rsvp-side-btn').forEach((b) => b.classList.remove('selected'));
+      document.querySelector('.rsvp-side-btn[data-value="신랑측"]').classList.add('selected');
       selectedAttendance = null;
+      selectedSide = '신랑측';
     })
     .catch(() => {
       status.textContent = '제출에 실패했습니다. 잠시 후 다시 시도해주세요.';
