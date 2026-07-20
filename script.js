@@ -74,6 +74,7 @@ const GALLERY_PHOTOS = [
   'images/photo10.jpg', 'images/photo11.jpg', 'images/photo12.jpg',
   'images/photo13.jpg', 'images/photo14.jpg', 'images/photo15.jpg',
   'images/photo16.jpg', 'images/photo17.jpg', 'images/photo18.jpg',
+  'images/photo19.jpg', 'images/photo20.jpg', 'images/photo21.jpg',
 ];
 let modalIndex = 0;
 
