@@ -429,6 +429,20 @@ html, body {
   line-height: 1.9;
   margin: 0 0 30px;
 }
+.rsvp-event-box {
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #a5717f;
+  background: linear-gradient(135deg, #fdf1f4, #fdf6e8);
+  border: 1.5px dashed #e8b6c4;
+  border-radius: 12px;
+  padding: 16px 14px;
+  margin: 0 0 24px;
+}
+.rsvp-event-box b {
+  color: #c76f8b;
+}
 .rsvp-form {
   display: flex;
   flex-direction: column;
@@ -576,3 +590,62 @@ html, body {
 }
 .modal-arrow-left { left: 12px; }
 .modal-arrow-right { right: 12px; }
+
+/* rsvp result popup */
+.rsvp-result-overlay {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+.rsvp-result-box {
+  background: #fff;
+  border-radius: 18px;
+  padding: 34px 26px 26px;
+  max-width: 320px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  animation: rsvp-pop 0.35s ease;
+}
+@keyframes rsvp-pop {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.rsvp-result-message {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #6b4650;
+  margin-bottom: 22px;
+}
+.rsvp-result-sub {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12.5px;
+  color: #c76f8b;
+}
+.lucky-one {
+  display: inline-block;
+  color: #e85d8f;
+  font-weight: 800;
+  font-size: 1.3em;
+  transform: translateY(0.03em);
+  text-shadow: 0 0 10px rgba(232, 93, 143, 0.35);
+}
+.rsvp-result-close {
+  background: #e8b6c4;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.rsvp-result-close:hover {
+  background: #dfa2b4;
+}

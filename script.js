@@ -90,6 +90,19 @@ function closeModal() {
   document.getElementById('image-modal').style.display = 'none';
 }
 
+function highlightOnes(text) {
+  return text.replace(/1/g, '<span class="lucky-one">1</span>');
+}
+
+function openRsvpModal(html) {
+  document.getElementById('rsvp-result-message').innerHTML = html;
+  document.getElementById('rsvp-result-modal').style.display = 'flex';
+}
+
+function closeRsvpModal() {
+  document.getElementById('rsvp-result-modal').style.display = 'none';
+}
+
 // Replace with your deployed Google Apps Script Web App URL (see apps-script.gs).
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyqwK0QAO29amne5IoSha782AHCmh4edg8oxTiS8HWyrwQODFsJuExWXsOwugyj5Okj-w/exec';
 
@@ -147,7 +160,15 @@ function submitRsvp(event) {
     body: JSON.stringify(data),
   })
     .then(() => {
-      status.textContent = '제출이 완료되었습니다. 감사합니다 :)';
+      status.textContent = '';
+      if (selectedAttendance === '참석') {
+        openRsvpModal(
+          `감사합니다.<br>${highlightOnes('11월 1일 1요일 오후 1시')}에 만나요~` +
+          `<br><span class="rsvp-result-sub">1이 다섯 개! 기억하기 쉽죠? 🎉</span>`
+        );
+      } else {
+        openRsvpModal('소중한 마음 감사합니다.<br>함께하지 못해 아쉽지만<br>축하하는 마음 잘 전해받았습니다 :)');
+      }
       event.target.reset();
       document.querySelectorAll('.rsvp-attend-btn').forEach((b) => b.classList.remove('selected'));
       document.querySelectorAll('.rsvp-side-btn').forEach((b) => b.classList.remove('selected'));

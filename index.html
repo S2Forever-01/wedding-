@@ -143,7 +143,7 @@
       </div>
       <div class="info-list">
         <div><span class="info-label">예&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;식</span> 1층 에메랄드홀 오후 1시</div>
-        <div><span class="info-label">피로연장</span> 2층 태극홀 · 3층 충무홀 (미정)<br>이용 시간은 오후 12시 15 분 ~ 2시 45분입니다. </div>        <div class="tip-box">Tip! <br>식장 맞은편 전쟁기념관 공원 예쁘고 산책하기 좋아요 ♡</div>
+        <div><span class="info-label">피로연장</span> 2층 태극홀 · 3층 충무홀 (미정)<br>이용 시간은 오후 12시 15분 ~ 2시 45분입니다. <br>식사 후 예식 관람하셔도 괜찮아요!</div>        <div class="tip-box">Tip! <br>식장 맞은편 전쟁기념관 공원 예쁘고 산책하기 좋아요 ♡</div>
       </div>
     </div>
 
@@ -200,13 +200,19 @@
         더 나은 예식 준비와 원활한 하객 맞이를 위해 <br>참석 여부를 미리 알려주시면 감사하겠습니다.<br><br>
         소중한 시간을 내어 참석해 주시는 모든 분들을 <br>정성껏 모실 수 있도록 참석 여부를 선택해 주세요.
       </p>
+      <div class="rsvp-event-box">
+        🎁 <b>깜짝 이벤트!</b><br>
+        참석 여부와 무관하게 작성해주신 분들 중<br>
+        추첨을 통해 <b>다섯분</b>께 소정의 상품을 드려요~<br>
+        두근두근, 결과는 예식 후 개별 연락드릴게요 💌
+      </div>
       <form id="rsvp-form" class="rsvp-form" onsubmit="submitRsvp(event)">
         <div class="rsvp-row">
           <div class="rsvp-side-group">
             <button type="button" class="rsvp-side-btn selected" data-value="신랑측" onclick="selectSide(this)">신랑</button>
             <button type="button" class="rsvp-side-btn" data-value="신부측" onclick="selectSide(this)">신부</button>
           </div>
-          <span class="rsvp-side-label">측 성함</span>
+          <span class="rsvp-side-label">측 지인 성함</span>
         </div>
         <input type="text" id="rsvp-name" class="rsvp-input" placeholder="이름을 입력해주세요">
         <div class="rsvp-attend-group">
@@ -223,6 +229,14 @@
       권세원 ♡ 김영화 · 2026. 11. 01
     </div>
 
+  </div>
+</div>
+
+<!-- RSVP RESULT MODAL -->
+<div id="rsvp-result-modal" class="rsvp-result-overlay" onclick="closeRsvpModal()">
+  <div class="rsvp-result-box" onclick="event.stopPropagation()">
+    <div id="rsvp-result-message" class="rsvp-result-message"></div>
+    <button type="button" class="rsvp-result-close" onclick="closeRsvpModal()">확인</button>
   </div>
 </div>
 
