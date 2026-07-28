@@ -1,5 +1,12 @@
 const WEDDING_TARGET = new Date('2026-11-01T13:00:00+09:00').getTime();
 
+document.addEventListener('contextmenu', function (e) {
+  if (e.target.tagName === 'IMG') e.preventDefault();
+});
+document.addEventListener('dragstart', function (e) {
+  if (e.target.tagName === 'IMG') e.preventDefault();
+});
+
 function openEnvelope() {
   document.getElementById('envelope').classList.add('opened');
   document.getElementById('envelope-flap').classList.add('open');
@@ -42,8 +49,8 @@ tick();
 setInterval(tick, 1000);
 
 function setTab(i) {
-  document.querySelectorAll('.tab-btn').forEach((btn, idx) => {
-    btn.classList.toggle('active', idx === i);
+  document.querySelectorAll('.tab-btn').forEach((btn) => {
+    btn.classList.toggle('active', Number(btn.dataset.tab) === i);
   });
   document.querySelectorAll('.tab-panel').forEach((panel) => {
     panel.style.display = Number(panel.dataset.tabPanel) === i ? '' : 'none';
@@ -68,13 +75,13 @@ function copyAccount(btn) {
 }
 
 const GALLERY_PHOTOS = [
-  'images/photo1.jpg', 'images/photo2.jpg', 'images/photo3.jpg',
-  'images/photo4.jpg', 'images/photo5.jpg', 'images/photo6.jpg',
-  'images/photo7.jpg', 'images/photo8.jpg', 'images/photo9.jpg',
-  'images/photo10.jpg', 'images/photo11.jpg', 'images/photo12.jpg',
-  'images/photo13.jpg', 'images/photo14.jpg', 'images/photo15.jpg',
-  'images/photo16.jpg', 'images/photo17.jpg', 'images/photo18.jpg',
-  'images/photo19.jpg', 'images/photo20.jpg', 'images/photo21.jpg',
+  'images/image1.jpg', 'images/image2.jpg', 'images/image3.jpg',
+  'images/image4.jpg', 'images/image5.jpg', 'images/image6.jpg',
+  'images/image7.jpg', 'images/image8.jpg', 'images/image9.jpg',
+  'images/image10.jpg', 'images/image11.jpg', 'images/image12.jpg',
+  'images/image13.jpg', 'images/image14.jpg', 'images/image15.jpg',
+  'images/image16.jpg', 'images/image17.jpg', 'images/image18.jpg',
+  'images/image19.jpg', 'images/image20.jpg', 'images/image21.jpg',
 ];
 let modalIndex = 0;
 

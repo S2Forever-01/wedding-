@@ -5,9 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>권세원 · 김영화 결혼합니다</title>
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://s2forever-01.github.io/wedding-/">
 <meta property="og:title" content="권세원 ♡ 김영화 결혼합니다">
 <meta property="og:description" content="2026년 11월 1일 일요일 오후 1시 저희 부부의 결혼식에 초대합니다.">
-<meta property="og:image" content="images/kakao-thumb.jpg">
+<meta property="og:image" content="https://s2forever-01.github.io/wedding-/images/kakao-thumb.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1800">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -66,10 +69,10 @@
     <div class="tabs" data-screen-label="Tabs" id="tab-nav">
       <button class="tab-btn active" data-tab="0" onclick="setTab(0)">인사말</button>
       <button class="tab-btn" data-tab="1" onclick="setTab(1)">사진첩</button>
-      <button class="tab-btn" data-tab="2" onclick="setTab(2)">교통</button>
-      <button class="tab-btn" data-tab="3" onclick="setTab(3)">식장</button>
-      <button class="tab-btn" data-tab="4" onclick="setTab(4)">마음 전하실 곳</button>
       <button class="tab-btn" data-tab="5" onclick="setTab(5)">참석여부</button>
+      <button class="tab-btn" data-tab="3" onclick="setTab(3)">식장</button>
+      <button class="tab-btn" data-tab="2" onclick="setTab(2)">교통</button>
+      <button class="tab-btn" data-tab="4" onclick="setTab(4)">마음 전하실 곳</button>
     </div>
 
     <!-- TAB PANEL 0: INVITATION -->
@@ -97,27 +100,73 @@
       <div class="panel-sub">GALLERY</div>
       <div class="panel-title">우리의 아름다운 순간</div>
       <div class="gallery-grid">
-        <img src="images/photo1.jpg" alt="사진 1" onclick="openModal(0)">
-        <img src="images/photo2.jpg" alt="사진 2" onclick="openModal(1)">
-        <img src="images/photo3.jpg" alt="사진 3" onclick="openModal(2)">
-        <img src="images/photo4.jpg" alt="사진 4" onclick="openModal(3)">
-        <img src="images/photo5.jpg" alt="사진 5" onclick="openModal(4)">
-        <img src="images/photo6.jpg" alt="사진 6" onclick="openModal(5)">
-        <img src="images/photo7.jpg" alt="사진 7" onclick="openModal(6)">
-        <img src="images/photo8.jpg" alt="사진 8" onclick="openModal(7)">
-        <img src="images/photo9.jpg" alt="사진 9" onclick="openModal(8)">
-        <img src="images/photo10.jpg" alt="사진 10" onclick="openModal(9)">
-        <img src="images/photo11.jpg" alt="사진 11" onclick="openModal(10)">
-        <img src="images/photo12.jpg" alt="사진 12" onclick="openModal(11)">
-        <img src="images/photo13.jpg" alt="사진 13" onclick="openModal(12)">
-        <img src="images/photo14.jpg" alt="사진 14" onclick="openModal(13)">
-        <img src="images/photo15.jpg" alt="사진 15" onclick="openModal(14)">
-        <img src="images/photo16.jpg" alt="사진 16" onclick="openModal(15)">
-        <img src="images/photo17.jpg" alt="사진 17" onclick="openModal(16)">
-        <img src="images/photo18.jpg" alt="사진 18" onclick="openModal(17)">
-        <img src="images/photo19.jpg" alt="사진 19" onclick="openModal(18)">
-        <img src="images/photo20.jpg" alt="사진 20" onclick="openModal(19)">
-        <img src="images/photo21.jpg" alt="사진 21" onclick="openModal(20)">
+        <img src="images/image1.jpg" alt="사진 1" onclick="openModal(0)">
+        <img src="images/image2.jpg" alt="사진 2" onclick="openModal(1)">
+        <img src="images/image3.jpg" alt="사진 3" onclick="openModal(2)">
+        <img src="images/image4.jpg" alt="사진 4" onclick="openModal(3)">
+        <img src="images/image5.jpg" alt="사진 5" onclick="openModal(4)">
+        <img src="images/image6.jpg" alt="사진 6" onclick="openModal(5)">
+        <img src="images/image7.jpg" alt="사진 7" onclick="openModal(6)">
+        <img src="images/image8.jpg" alt="사진 8" onclick="openModal(7)">
+        <img src="images/image9.jpg" alt="사진 9" onclick="openModal(8)">
+        <img src="images/image10.jpg" alt="사진 10" onclick="openModal(9)">
+        <img src="images/image11.jpg" alt="사진 11" onclick="openModal(10)">
+        <img src="images/image12.jpg" alt="사진 12" onclick="openModal(11)">
+        <img src="images/image13.jpg" alt="사진 13" onclick="openModal(12)">
+        <img src="images/image14.jpg" alt="사진 14" onclick="openModal(13)">
+        <img src="images/image15.jpg" alt="사진 15" onclick="openModal(14)">
+        <img src="images/image16.jpg" alt="사진 16" onclick="openModal(15)">
+        <img src="images/image17.jpg" alt="사진 17" onclick="openModal(16)">
+        <img src="images/image18.jpg" alt="사진 18" onclick="openModal(17)">
+        <img src="images/image19.jpg" alt="사진 19" onclick="openModal(18)">
+        <img src="images/image20.jpg" alt="사진 20" onclick="openModal(19)">
+        <img src="images/image21.jpg" alt="사진 21" onclick="openModal(20)">
+      </div>
+    </div>
+
+    <!-- TAB PANEL 5: RSVP -->
+    <div class="tab-panel" data-tab-panel="5" data-screen-label="RSVP" style="display:none;">
+      <div class="panel-sub">RSVP</div>
+      <div class="panel-title">참석여부</div>
+      <p class="rsvp-intro">
+        더 나은 예식 준비와 원활한 하객 맞이를 위해 <br>참석 여부를 미리 알려주시면 감사하겠습니다.<br><br>
+        소중한 시간을 내어 참석해 주시는 모든 분들을 <br>정성껏 모실 수 있도록 참석 여부를 선택해 주세요.
+      </p>
+      <div class="rsvp-event-box">
+        🎁 <b>깜짝 이벤트!</b><br>
+        참석 여부와 무관하게 작성해주신 분들 중<br>
+        추첨을 통해 <b>다섯분</b>께 소정의 상품을 드려요~<br>
+        두근두근, 결과는 예식 후 개별 연락드릴게요 💌
+      </div>
+      <form id="rsvp-form" class="rsvp-form" onsubmit="submitRsvp(event)">
+        <div class="rsvp-row">
+          <div class="rsvp-side-group">
+            <button type="button" class="rsvp-side-btn selected" data-value="신랑측" onclick="selectSide(this)">신랑</button>
+            <button type="button" class="rsvp-side-btn" data-value="신부측" onclick="selectSide(this)">신부</button>
+          </div>
+          <span class="rsvp-side-label">측 지인 성함</span>
+        </div>
+        <input type="text" id="rsvp-name" class="rsvp-input" placeholder="이름을 입력해주세요">
+        <div class="rsvp-attend-group">
+          <button type="button" class="rsvp-attend-btn" data-value="참석" onclick="selectAttendance(this)">참석</button>
+          <button type="button" class="rsvp-attend-btn" data-value="불참" onclick="selectAttendance(this)">불참</button>
+        </div>
+        <button type="submit" class="rsvp-submit-btn">제출하기</button>
+      </form>
+      <p id="rsvp-status" class="rsvp-status"></p>
+    </div>
+
+    <!-- TAB PANEL 3: VENUE -->
+    <div class="tab-panel" data-tab-panel="3" data-screen-label="Venue" style="display:none;">
+      <div class="panel-sub">HALL INFORMATION</div>
+      <div class="panel-title">식장 안내</div>
+      <div class="venue-photo">
+        <img src="images/venue.jpg" alt="식장 참고 이미지 (임시)">
+        <span class="venue-photo-badge">임시 · 추후 결혼식 당일 참고하실 식장 구조 이미지로 교체 예정입니다. </span>
+      </div>
+      <div class="info-list">
+        <div><span class="info-label">예&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;식</span> 1층 에메랄드홀 오후 1시</div>
+        <div><span class="info-label">피로연장</span> 2층 태극홀 · 3층 충무홀 (미정)<br>이용 시간은 오후 12시 15분 ~ 2시 45분입니다. <br>식사 후 예식 관람하셔도 괜찮아요!</div>        <div class="tip-box">Tip! <br>식장 맞은편 전쟁기념관 공원 예쁘고 산책하기 좋아요 ♡</div>
       </div>
     </div>
 
@@ -126,8 +175,8 @@
       <div class="panel-sub">TRANSPORTATION</div>
       <div class="panel-title">교통 안내</div>
 
-      <div style="text-align: center; margin-bottom: 20px; line-height: 1.5; color: #666; font-size: 14px; font-family: 'Nanum Myeongjo', serif;">
-    예식장 주변 교통이 혼잡하오니,<br>가능하시다면 대중교통 이용을 권장드립니다.
+      <div class="transport-notice">
+        예식장 주변 교통이 혼잡하오니,<br>가능하시다면 대중교통 이용을 권장드립니다.
       </div>
       <div class="info-list">
         <div><span class="info-label">주&nbsp;&nbsp;&nbsp;&nbsp;소</span> 서울 용산구 이태원로 22, 국방컨벤션</div>
@@ -143,20 +192,6 @@
         <a href="https://place.map.kakao.com/152313844" target="_blank" class="map-btn kakao">카카오맵</a>
         <a href="https://naver.me/GI3hfgsb" target="_blank" class="map-btn naver">네이버지도</a>
         <a href="https://tmap.life/bb3de44a" target="_blank" class="map-btn tmap">T맵</a>
-      </div>
-    </div>
-
-    <!-- TAB PANEL 3: VENUE -->
-    <div class="tab-panel" data-tab-panel="3" data-screen-label="Venue" style="display:none;">
-      <div class="panel-sub">HALL INFORMATION</div>
-      <div class="panel-title">식장 안내</div>
-      <div class="venue-photo">
-        <img src="images/venue.jpg" alt="식장 참고 이미지 (임시)">
-        <span class="venue-photo-badge">임시 이미지 · 추후 참고하실 식장 구조 이미지로 교체 예정입니다. </span>
-      </div>
-      <div class="info-list">
-        <div><span class="info-label">예&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;식</span> 1층 에메랄드홀 오후 1시</div>
-        <div><span class="info-label">피로연장</span> 2층 태극홀 · 3층 충무홀 (미정)<br>이용 시간은 오후 12시 15분 ~ 2시 45분입니다. <br>식사 후 예식 관람하셔도 괜찮아요!</div>        <div class="tip-box">Tip! <br>식장 맞은편 전쟁기념관 공원 예쁘고 산책하기 좋아요 ♡</div>
       </div>
     </div>
 
@@ -203,38 +238,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- TAB PANEL 5: RSVP -->
-    <div class="tab-panel" data-tab-panel="5" data-screen-label="RSVP" style="display:none;">
-      <div class="panel-sub">RSVP</div>
-      <div class="panel-title">참석여부</div>
-      <p class="rsvp-intro">
-        더 나은 예식 준비와 원활한 하객 맞이를 위해 <br>참석 여부를 미리 알려주시면 감사하겠습니다.<br><br>
-        소중한 시간을 내어 참석해 주시는 모든 분들을 <br>정성껏 모실 수 있도록 참석 여부를 선택해 주세요.
-      </p>
-      <div class="rsvp-event-box">
-        🎁 <b>깜짝 이벤트!</b><br>
-        참석 여부와 무관하게 작성해주신 분들 중<br>
-        추첨을 통해 <b>다섯분</b>께 소정의 상품을 드려요~<br>
-        두근두근, 결과는 예식 후 개별 연락드릴게요 💌
-      </div>
-      <form id="rsvp-form" class="rsvp-form" onsubmit="submitRsvp(event)">
-        <div class="rsvp-row">
-          <div class="rsvp-side-group">
-            <button type="button" class="rsvp-side-btn selected" data-value="신랑측" onclick="selectSide(this)">신랑</button>
-            <button type="button" class="rsvp-side-btn" data-value="신부측" onclick="selectSide(this)">신부</button>
-          </div>
-          <span class="rsvp-side-label">측 지인 성함</span>
-        </div>
-        <input type="text" id="rsvp-name" class="rsvp-input" placeholder="이름을 입력해주세요">
-        <div class="rsvp-attend-group">
-          <button type="button" class="rsvp-attend-btn" data-value="참석" onclick="selectAttendance(this)">참석</button>
-          <button type="button" class="rsvp-attend-btn" data-value="불참" onclick="selectAttendance(this)">불참</button>
-        </div>
-        <button type="submit" class="rsvp-submit-btn">제출하기</button>
-      </form>
-      <p id="rsvp-status" class="rsvp-status"></p>
     </div>
 
     <!-- FOOTER -->
