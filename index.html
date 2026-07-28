@@ -7,7 +7,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://s2forever-01.github.io/wedding-/">
 <meta property="og:title" content="권세원 ♡ 김영화 결혼합니다">
-<meta property="og:description" content="2026년 11월 1일 일요일 오후 1시 저희 부부의 결혼식에 초대합니다.">
+<meta property="og:description" content="2026년 11월 1일 일요일 오후 1시 결혼식에 초대합니다.">
 <meta property="og:image" content="https://s2forever-01.github.io/wedding-/images/kakao-thumb.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="1800">
@@ -91,8 +91,14 @@
         따뜻한 마음으로 축복해 주시면 감사하겠습니다.
       </p>
       <div class="family-relations">
-        <div><b>❋권기영 · 최현순</b> 의 장남 <span class="name-hl">권세원</span></div>
-        <div><b>&nbsp;김성호 · 최순정</b> 의 장녀 <span class="name-hl">김영화</span></div>
+        <div class="family-relations-table">
+          <div>
+            <span class="family-mark">❋</span><span class="family-text"><b>권기영 · 최현순</b> 의 장남 <span class="name-hl">권세원</span></span>
+          </div>
+          <div>
+            <span class="family-mark"></span><span class="family-text"><b>김성호 · 최순정</b> 의 장녀 <span class="name-hl">김영화</span></span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -140,7 +146,8 @@
         🎁 <b>깜짝 이벤트!</b><br>
         참석 여부와 무관하게 작성해주신 분들 중<br>
         추첨을 통해 <b>다섯분</b>께 소정의 상품을 드려요~<br>
-        두근두근, 결과는 예식 후 개별 연락드릴게요 💌
+        두근두근, 결과는 예식 후 개별 연락드릴게요 💌<br>
+        참석 인원 수만큼 추첨 응모 횟수에 반영됩니다!
       </div>
       <form id="rsvp-form" class="rsvp-form" onsubmit="submitRsvp(event)">
         <div class="rsvp-row">
@@ -150,7 +157,21 @@
           </div>
           <span class="rsvp-side-label">측 지인 성함</span>
         </div>
-        <input type="text" id="rsvp-name" class="rsvp-input" placeholder="이름을 입력해주세요">
+        <div class="rsvp-name-row">
+          <input type="text" id="rsvp-name" class="rsvp-input" placeholder="이름을 입력해주세요">
+          <select id="rsvp-count" class="rsvp-input rsvp-count-select">
+            <option value="1" selected>1명</option>
+            <option value="2">2명</option>
+            <option value="3">3명</option>
+            <option value="4">4명</option>
+            <option value="5">5명</option>
+            <option value="6">6명</option>
+            <option value="7">7명</option>
+            <option value="8">8명</option>
+            <option value="9">9명</option>
+            <option value="10">10명</option>
+          </select>
+        </div>
         <div class="rsvp-attend-group">
           <button type="button" class="rsvp-attend-btn" data-value="참석" onclick="selectAttendance(this)">참석</button>
           <button type="button" class="rsvp-attend-btn" data-value="불참" onclick="selectAttendance(this)">불참</button>
@@ -170,7 +191,7 @@
       </div>
       <div class="info-list">
         <div><span class="info-label">예&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;식</span> 1층 에메랄드홀 오후 1시</div>
-        <div><span class="info-label">연회장</span> 2층 태극홀 · 3층 충무홀 (미정)<br>이용 시간은 오후 12시 15분 ~ 2시 45분입니다. <br>식사 후 예식 관람하셔도 괜찮아요!</div>        <div class="tip-box">Tip! <br>식장 맞은편 전쟁기념관 공원 예쁘고 산책하기 좋아요 ♡</div>
+        <div><span class="info-label">연 회 장</span> 2층 태극홀 · 3층 충무홀 (미정)<br>이용 시간은 오후 12시 15분 ~ 2시 45분입니다. <br>식사 후 예식 관람하셔도 괜찮아요!</div>        <div class="tip-box">Tip! <br>식장 맞은편 전쟁기념관 공원 예쁘고 산책하기 좋아요 ♡</div>
       </div>
     </div>
 
@@ -182,13 +203,6 @@
       <div class="transport-notice">
         예식장 주변 교통이 혼잡하오니,<br>가능하시다면 대중교통 이용을 권장드립니다.
       </div>
-      <div class="info-list">
-        <div><span class="info-label">주&nbsp;&nbsp;&nbsp;&nbsp;소</span> 서울 용산구 이태원로 22, 국방컨벤션</div>
-        <div><span class="info-label">지 하 철</span> <br> 4/6호선 삼각지역 13번 출구 (도보 5분)<br>6호선 녹사평역 4번 출구 (도보 9분)</div>
-        <div><span class="info-label">주&nbsp;&nbsp;&nbsp;&nbsp;차</span> <br> 웨딩홀 2시간 무료 주차 (자동 등록)<br>※ 만차 시 주차장 입구에서 전쟁기념관 주차장 안내문 <br>수령 후 주차 가능합니다! (안내데스크 주차등록)</div>
-        <div><span class="info-label">서울역 이용 시</span> <br> 421번 버스 전쟁기념관 하차 (8분)<br>4호선 삼각지역 하차 (3분)</div>
-        <div><span class="info-label">셔틀버스</span> 신부측 대절 버스 창원시 왕복 운행 예정</div>
-      </div>
       <div class="map-box">
         <img src="images/map.PNG" alt="map">
       </div>
@@ -196,6 +210,14 @@
         <a href="https://place.map.kakao.com/152313844" target="_blank" class="map-btn kakao">카카오맵</a>
         <a href="https://naver.me/GI3hfgsb" target="_blank" class="map-btn naver">네이버지도</a>
         <a href="https://tmap.life/bb3de44a" target="_blank" class="map-btn tmap">T맵</a>
+      </div>
+      <div class="map-buttons-desc">버튼을 누르시면 각 지도 앱에서 웨딩홀 주소로 바로 연결됩니다.</div>
+      <div class="info-list">
+        <div><span class="info-label">주&nbsp;&nbsp;&nbsp;&nbsp;소</span> 서울 용산구 이태원로 22, 국방컨벤션</div>
+        <div><span class="info-label">지 하 철</span> <br> 4/6호선 삼각지역 13번 출구 (도보 5분)<br>6호선 녹사평역 4번 출구 (도보 9분)</div>
+        <div><span class="info-label">주&nbsp;&nbsp;&nbsp;&nbsp;차</span> <br> 웨딩홀 2시간 무료 주차 (자동 등록)<br>※ 만차 시 주차장 입구에서 전쟁기념관 주차장 안내문 <br>수령 후 주차 가능합니다! (안내데스크 주차등록)</div>
+        <div><span class="info-label">서울역 이용 시</span> <br> 421번 버스 전쟁기념관 하차 (8분)<br>4호선 삼각지역 하차 (3분)</div>
+        <div><span class="info-label">셔틀버스</span> 신부측 대절 버스 창원시 왕복 운행 예정</div>
       </div>
     </div>
 

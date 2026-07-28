@@ -85,9 +85,14 @@ const GALLERY_PHOTOS = [
   'images/image22.jpg', 'images/image23.jpg', 'images/image24.jpg',
 ];
 let modalIndex = 0;
+let modalScrollY = 0;
 
 function openModal(index) {
   modalIndex = index;
+  modalScrollY = window.scrollY || document.documentElement.scrollTop;
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${modalScrollY}px`;
+  document.body.style.width = '100%';
   document.getElementById('image-modal').style.display = 'flex';
   document.getElementById('modal-img').src = GALLERY_PHOTOS[modalIndex];
 }
@@ -100,6 +105,10 @@ function modalNav(dir, event) {
 
 function closeModal() {
   document.getElementById('image-modal').style.display = 'none';
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.width = '';
+  window.scrollTo(0, modalScrollY);
 }
 
 // Swipe navigation for the image modal on touch devices
@@ -116,6 +125,10 @@ function closeModal() {
     startY = e.touches[0].clientY;
     swiped = false;
   }, { passive: true });
+
+  modal.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+  }, { passive: false });
 
   modal.addEventListener('touchend', (e) => {
     const touch = e.changedTouches[0];
@@ -171,6 +184,7 @@ function selectAttendance(btn) {
 function submitRsvp(event) {
   event.preventDefault();
   const name = document.getElementById('rsvp-name').value.trim();
+  const count = document.getElementById('rsvp-count').value;
   const status = document.getElementById('rsvp-status');
   const submitBtn = event.target.querySelector('.rsvp-submit-btn');
 
@@ -180,6 +194,10 @@ function submitRsvp(event) {
   }
   if (!name) {
     status.textContent = '성함을 입력해주세요.';
+    return;
+  }
+  if (!count || Number(count) < 1) {
+    status.textContent = '참석 인원을 입력해주세요.';
     return;
   }
   if (!selectedAttendance) {
@@ -197,6 +215,7 @@ function submitRsvp(event) {
   const data = {
     type: selectedSide,      // 신랑/신부
     name: name,      // 이름
+    count: count,     // 인원
     attendance: selectedAttendance // 참석/불참
   };
 

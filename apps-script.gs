@@ -17,7 +17,7 @@
 
   Uses SpreadsheetApp.openById so this works whether the script is bound to
   the sheet or standalone. Writes to the sheet's first tab (gid=0), appending
-  [제출시각, 구분, 성함, 참석여부] below the existing header row.
+  [제출시각, 구분, 성함, 인원, 참석여부] below the existing header row.
 */
 
 var SPREADSHEET_ID = '1JBRfiTgynph9O1J_4My9w_oTYhsfmSVTrgwq2DquL8w';
@@ -25,11 +25,14 @@ var SPREADSHEET_ID = '1JBRfiTgynph9O1J_4My9w_oTYhsfmSVTrgwq2DquL8w';
 function doPost(e) {
   var sheet = SpreadsheetApp.openById(SPREADSHEET_ID).getSheets()[0];
 
-  var side = e.parameter.side || '';
-  var name = e.parameter.name || '';
-  var attendance = e.parameter.attendance || '';
+  var data = JSON.parse(e.postData.contents);
 
-  sheet.appendRow([new Date(), side, name, attendance]);
+  var side = data.type || '';
+  var name = data.name || '';
+  var count = data.count || '';
+  var attendance = data.attendance || '';
+
+  sheet.appendRow([new Date(), side, name, count, attendance]);
 
   return ContentService
     .createTextOutput(JSON.stringify({ result: 'success' }))
