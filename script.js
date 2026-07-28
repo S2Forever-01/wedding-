@@ -102,6 +102,41 @@ function closeModal() {
   document.getElementById('image-modal').style.display = 'none';
 }
 
+// Swipe navigation for the image modal on touch devices
+(function initModalSwipe() {
+  const modal = document.getElementById('image-modal');
+  const SWIPE_THRESHOLD = 40;
+  let startX = 0;
+  let startY = 0;
+  let swiped = false;
+
+  modal.addEventListener('touchstart', (e) => {
+    if (e.touches.length !== 1) return;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    swiped = false;
+  }, { passive: true });
+
+  modal.addEventListener('touchend', (e) => {
+    const touch = e.changedTouches[0];
+    const dx = touch.clientX - startX;
+    const dy = touch.clientY - startY;
+    if (Math.abs(dx) > SWIPE_THRESHOLD && Math.abs(dx) > Math.abs(dy)) {
+      swiped = true;
+      e.preventDefault();
+      modalNav(dx < 0 ? 1 : -1, e);
+    }
+  });
+
+  // Prevent the swipe's trailing click from closing the modal
+  modal.addEventListener('click', (e) => {
+    if (swiped) {
+      e.stopPropagation();
+      swiped = false;
+    }
+  }, true);
+})();
+
 function highlightOnes(text) {
   return text.replace(/1/g, '<span class="lucky-one">1</span>');
 }
