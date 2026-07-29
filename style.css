@@ -308,7 +308,7 @@ html, body {
   text-align: left;
   white-space: nowrap;
 }
-.name-hl { color: #c9738d; }
+.name-hl { color: #c9738d; font-weight: 700; }
 
 /* gallery */
 [data-tab-panel="1"] { padding: 40px 20px; }
@@ -550,10 +550,10 @@ html, body {
   width: auto;
   flex: 1;
 }
-.rsvp-count-select {
-  flex: 0 0 37px;
-  padding: 12px 2px;
-  font-size: 12px;
+.rsvp-name-row .rsvp-count-select {
+  flex: 0 0 120px;
+  padding: 12px 6px;
+  font-size: 14px;
   text-align: center;
   text-align-last: center;
   background: #fff;

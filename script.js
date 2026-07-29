@@ -164,7 +164,7 @@ function closeRsvpModal() {
 }
 
 // Replace with your deployed Google Apps Script Web App URL (see apps-script.gs).
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyqwK0QAO29amne5IoSha782AHCmh4edg8oxTiS8HWyrwQODFsJuExWXsOwugyj5Okj-w/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzPXGcfLbhBkSpgfLBBWFlXmPQDb8HLcMhO36FVd-LDFeH0m4Gr1Lrs5Oi3r1tetwfU/exec';
 
 let selectedSide = '신랑측';
 let selectedAttendance = null;
