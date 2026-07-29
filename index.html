@@ -159,18 +159,16 @@
         </div>
         <div class="rsvp-name-row">
           <input type="text" id="rsvp-name" class="rsvp-input" placeholder="이름을 입력해주세요">
-          <select id="rsvp-count" class="rsvp-input rsvp-count-select">
-            <option value="1" selected>1명</option>
-            <option value="2">2명</option>
-            <option value="3">3명</option>
-            <option value="4">4명</option>
-            <option value="5">5명</option>
-            <option value="6">6명</option>
-            <option value="7">7명</option>
-            <option value="8">8명</option>
-            <option value="9">9명</option>
-            <option value="10">10명</option>
-          </select>
+          <div class="rsvp-count-dropdown">
+            <button type="button" class="rsvp-input rsvp-count-select" id="rsvp-count-btn" onclick="toggleCountDropdown(event)">1명</button>
+            <input type="hidden" id="rsvp-count" value="1">
+            <ul class="rsvp-count-list" id="rsvp-count-list">
+              <li data-value="1" class="selected" onclick="selectCount(this)">1명</li>
+              <li data-value="2" onclick="selectCount(this)">2명</li>
+              <li data-value="3" onclick="selectCount(this)">3명</li>
+              <li data-value="4" onclick="selectCount(this)">4명</li>
+            </ul>
+          </div>
         </div>
         <div class="rsvp-attend-group">
           <button type="button" class="rsvp-attend-btn" data-value="참석" onclick="selectAttendance(this)">참석</button>

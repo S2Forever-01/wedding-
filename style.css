@@ -239,7 +239,7 @@ html, body {
   border: none;
   padding: 9px 4px;
   border-radius: 14px;
-  font-size: 11px;
+  font-size: 14px;
   font-family: inherit;
   white-space: normal;
   word-break: keep-all;
@@ -552,16 +552,53 @@ html, body {
   flex: 1.4;
   min-width: 0;
 }
-.rsvp-name-row .rsvp-count-select {
+.rsvp-count-dropdown {
+  position: relative;
   flex: 1;
   min-width: 0;
   max-width: 110px;
+}
+.rsvp-name-row .rsvp-count-select {
+  width: 100%;
   padding: 12px 6px;
   font-size: 14px;
   text-align: center;
-  text-align-last: center;
   background: #fff;
   cursor: pointer;
+}
+.rsvp-count-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  padding: 4px;
+  background: #fff;
+  border: 1px solid #f6dbe3;
+  border-radius: 8px;
+  list-style: none;
+  z-index: 20;
+  box-shadow: 0 4px 12px rgba(74, 53, 64, 0.12);
+}
+.rsvp-count-list.open {
+  display: block;
+}
+.rsvp-count-list li {
+  padding: 9px 6px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #4a3540;
+}
+.rsvp-count-list li:hover {
+  background: #fdf1f4;
+}
+.rsvp-count-list li.selected {
+  background: #f2a9bb;
+  color: #fff;
+  font-weight: 700;
 }
 .rsvp-attend-group {
   display: flex;

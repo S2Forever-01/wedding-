@@ -181,6 +181,23 @@ function selectAttendance(btn) {
   selectedAttendance = btn.dataset.value;
 }
 
+function toggleCountDropdown(event) {
+  event.stopPropagation();
+  document.getElementById('rsvp-count-list').classList.toggle('open');
+}
+
+function selectCount(li) {
+  document.querySelectorAll('.rsvp-count-list li').forEach((l) => l.classList.remove('selected'));
+  li.classList.add('selected');
+  document.getElementById('rsvp-count').value = li.dataset.value;
+  document.getElementById('rsvp-count-btn').textContent = li.textContent;
+  document.getElementById('rsvp-count-list').classList.remove('open');
+}
+
+document.addEventListener('click', function () {
+  document.getElementById('rsvp-count-list').classList.remove('open');
+});
+
 function submitRsvp(event) {
   event.preventDefault();
   const name = document.getElementById('rsvp-name').value.trim();
