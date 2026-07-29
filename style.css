@@ -548,10 +548,13 @@ html, body {
 }
 .rsvp-name-row .rsvp-input {
   width: auto;
-  flex: 1;
+  flex: 1.4;
+  min-width: 0;
 }
 .rsvp-name-row .rsvp-count-select {
-  flex: 0 0 120px;
+  flex: 1;
+  min-width: 0;
+  max-width: 110px;
   padding: 12px 6px;
   font-size: 14px;
   text-align: center;
