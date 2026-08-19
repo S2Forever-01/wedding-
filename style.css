@@ -19,85 +19,6 @@ html, body {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.55; }
-  50% { opacity: 1; }
-}
-
-/* ===== ENVELOPE INTRO ===== */
-.envelope-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  background: linear-gradient(160deg, #fbe4ea, #f8d3dd);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: opacity 0.6s ease, visibility 0.6s;
-}
-.envelope-overlay.opened {
-  opacity: 0;
-  visibility: hidden;
-}
-.envelope-box {
-  width: 210px;
-  height: 150px;
-  position: relative;
-}
-.envelope-back {
-  position: absolute;
-  inset: 0;
-  background: #fff9fa;
-  border: 1px solid #f0b8c8;
-  box-shadow: 0 12px 30px rgba(220, 140, 160, 0.25);
-}
-.envelope-flap {
-  position: absolute;
-  left: 0; right: 0; top: 0; height: 0;
-  border-left: 105px solid transparent;
-  border-right: 105px solid transparent;
-  border-top: 78px solid #f6c9d6;
-  transform-origin: top center;
-  transform: rotate(0deg);
-  transition: transform 0.7s cubic-bezier(.4,0,.2,1);
-  z-index: 3;
-}
-.envelope-flap.open {
-  transform: rotate(-178deg);
-}
-.envelope-letter {
-  position: absolute;
-  left: 14px; right: 14px; top: 24px; bottom: 14px;
-  background: #fffdfd;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding-bottom: 18px;
-  text-align: center;
-  z-index: 1;
-}
-.envelope-names {
-  font-family: 'Nanum Myeongjo', serif;
-  font-size: 15px;
-  color: #c9738d;
-}
-.envelope-names b { color: #e58fa3; }
-.envelope-date {
-  font-size: 11px;
-  color: #b98a97;
-  margin-top: 6px;
-  letter-spacing: 0.05em;
-}
-.tap-notice {
-  margin-top: 26px;
-  font-size: 12px;
-  letter-spacing: 0.3em;
-  color: #c9738d;
-  animation: pulseGlow 2s ease infinite;
-}
 
 /* ===== MAIN LAYOUT ===== */
 .page {
@@ -475,7 +396,6 @@ html, body {
 }
 
 /* rsvp */
-[data-tab-panel="5"] { padding: 48px 32px 64px; }
 .rsvp-intro {
   text-align: center;
   font-size: 13.5px;
@@ -663,13 +583,26 @@ html, body {
   background: rgba(0, 0, 0, 0.85);
   justify-content: center;
   align-items: center;
-  touch-action: none;
+  touch-action: pinch-zoom;
 }
 .modal-content {
   max-width: 90%;
   max-height: 85%;
   object-fit: contain;
   border-radius: 8px;
+  touch-action: pinch-zoom;
+}
+.modal-counter {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 16px;
+  border-radius: 999px;
 }
 .modal-close {
   position: absolute;
@@ -702,6 +635,65 @@ html, body {
 }
 .modal-arrow-left { left: 12px; }
 .modal-arrow-right { right: 12px; }
+
+/* rsvp popup */
+.rsvp-popup-overlay {
+  display: flex;
+  position: fixed;
+  z-index: 9998;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+.rsvp-popup-box {
+  position: relative;
+  background: #fffbfc;
+  border-radius: 18px;
+  padding: 40px 28px 32px;
+  max-width: 400px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  animation: rsvp-pop 0.35s ease;
+}
+.rsvp-popup-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  border: none;
+  background: none;
+  font-size: 26px;
+  line-height: 1;
+  color: #b98a97;
+  cursor: pointer;
+}
+.rsvp-float-btn {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f97fa0, #f2a9bb);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  padding: 13px 20px;
+  box-shadow: 0 6px 18px rgba(210, 120, 150, 0.45);
+  cursor: pointer;
+  animation: rsvp-float-bounce 1.8s ease-in-out infinite;
+}
+@keyframes rsvp-float-bounce {
+  0%, 100% { transform: translateY(0) scale(1); box-shadow: 0 6px 18px rgba(210, 120, 150, 0.45); }
+  50% { transform: translateY(-5px) scale(1.05); box-shadow: 0 10px 24px rgba(210, 120, 150, 0.55); }
+}
 
 /* rsvp result popup */
 .rsvp-result-overlay {

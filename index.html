@@ -19,19 +19,6 @@
 </head>
 <body>
 
-<!-- ENVELOPE INTRO -->
-<div id="envelope" class="envelope-overlay" onclick="openEnvelope()">
-  <div class="envelope-box">
-    <div class="envelope-back"></div>
-    <div class="envelope-flap" id="envelope-flap"></div>
-    <div class="envelope-letter">
-      <div class="envelope-names">권세원 <b>·</b> 김영화</div>
-      <div class="envelope-date">2026. 11. 01</div>
-    </div>
-  </div>
-  <div class="tap-notice">TAP TO OPEN</div>
-</div>
-
 <!-- MAIN CONTENT -->
 <div class="page">
   <div class="card">
@@ -70,7 +57,6 @@
     <div class="tabs" data-screen-label="Tabs" id="tab-nav">
       <button class="tab-btn active" data-tab="0" onclick="setTab(0)">인사말</button>
       <button class="tab-btn" data-tab="1" onclick="setTab(1)">사진첩</button>
-      <button class="tab-btn" data-tab="5" onclick="setTab(5)">참석여부</button>
       <button class="tab-btn" data-tab="3" onclick="setTab(3)">식장</button>
       <button class="tab-btn" data-tab="2" onclick="setTab(2)">교통</button>
       <button class="tab-btn" data-tab="4" onclick="setTab(4)">마음 전하실 곳</button>
@@ -134,51 +120,6 @@
       </div>
     </div>
 
-    <!-- TAB PANEL 5: RSVP -->
-    <div class="tab-panel" data-tab-panel="5" data-screen-label="RSVP" style="display:none;">
-      <div class="panel-sub">RSVP</div>
-      <div class="panel-title">참석여부</div>
-      <p class="rsvp-intro">
-        더 나은 예식 준비와 원활한 하객 맞이를 위해 <br>참석 여부를 미리 알려주시면 감사하겠습니다.<br><br>
-        소중한 시간을 내어 참석해 주시는 모든 분들을 <br>정성껏 모실 수 있도록 참석 여부를 선택해 주세요.
-      </p>
-      <div class="rsvp-event-box">
-        🎁 <b>깜짝 이벤트!</b><br>
-        참석 여부와 무관하게 작성해주신 분들 중<br>
-        추첨을 통해 <b>다섯분</b>께 소정의 상품을 드려요~<br>
-        두근두근, 결과는 예식 후 개별 연락드릴게요 💌<br>
-        참석 인원 수만큼 추첨 응모 횟수에 반영됩니다!
-      </div>
-      <form id="rsvp-form" class="rsvp-form" onsubmit="submitRsvp(event)">
-        <div class="rsvp-row">
-          <div class="rsvp-side-group">
-            <button type="button" class="rsvp-side-btn selected" data-value="신랑측" onclick="selectSide(this)">신랑</button>
-            <button type="button" class="rsvp-side-btn" data-value="신부측" onclick="selectSide(this)">신부</button>
-          </div>
-          <span class="rsvp-side-label">측 지인 성함</span>
-        </div>
-        <div class="rsvp-name-row">
-          <input type="text" id="rsvp-name" class="rsvp-input" placeholder="이름을 입력해주세요">
-          <div class="rsvp-count-dropdown">
-            <button type="button" class="rsvp-input rsvp-count-select" id="rsvp-count-btn" onclick="toggleCountDropdown(event)">1명</button>
-            <input type="hidden" id="rsvp-count" value="1">
-            <ul class="rsvp-count-list" id="rsvp-count-list">
-              <li data-value="1" class="selected" onclick="selectCount(this)">1명</li>
-              <li data-value="2" onclick="selectCount(this)">2명</li>
-              <li data-value="3" onclick="selectCount(this)">3명</li>
-              <li data-value="4" onclick="selectCount(this)">4명</li>
-            </ul>
-          </div>
-        </div>
-        <div class="rsvp-attend-group">
-          <button type="button" class="rsvp-attend-btn" data-value="참석" onclick="selectAttendance(this)">참석</button>
-          <button type="button" class="rsvp-attend-btn" data-value="불참" onclick="selectAttendance(this)">불참</button>
-        </div>
-        <button type="submit" class="rsvp-submit-btn">제출하기</button>
-      </form>
-      <p id="rsvp-status" class="rsvp-status"></p>
-    </div>
-
     <!-- TAB PANEL 3: VENUE -->
     <div class="tab-panel" data-tab-panel="3" data-screen-label="Venue" style="display:none;">
       <div class="panel-sub">HALL INFORMATION</div>
@@ -189,7 +130,7 @@
       </div>
       <div class="info-list">
         <div><span class="info-label">예&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;식</span> 1층 에메랄드홀 오후 1시</div>
-        <div><span class="info-label">연 회 장</span> 2층 태극홀 · 3층 충무홀 (미정)<br>이용 시간은 오후 12시 15분 ~ 2시 45분입니다. <br>점심 식사 후 예식 관람하셔도 괜찮아요!</div>        <div class="tip-box">Tip! <br>식장 맞은편 전쟁기념관 공원 예쁘고 산책하기 좋아요 ♡</div>
+        <div><span class="info-label">연 회 장</span> 2층 태극홀 · 3층 충무홀 (미정)<br>이용 시간은 <span class="hl">오후 12시 15분 ~ 2시 45분</span> 입니다. <br>점심 식사 후 1시 예식 관람하시는 것도 좋은 계획이에요!</div>        <div class="tip-box">Tip! <br>식장 맞은편 전쟁기념관 공원 예쁘고 산책하기 좋아요 ♡</div>
       </div>
     </div>
 
@@ -237,7 +178,7 @@
             <button class="copy-btn" data-copy="국민은행 734401-01-298850" onclick="copyAccount(this)">복사</button>
           </div>
           <div class="account-row">
-            <span>혼주 | 최현순<br><b>국민은행 734401-01-254863</b></span>
+            <span>혼주 (신랑 어머니) | 최현순<br><b>국민은행 734401-01-254863</b></span>
             <button class="copy-btn" data-copy="국민은행 734401-01-254863" onclick="copyAccount(this)">복사</button>
           </div>
         </div>
@@ -253,11 +194,11 @@
             <button class="copy-btn" data-copy="우리은행 1002-253-203770" onclick="copyAccount(this)">복사</button>
           </div>
           <div class="account-row">
-            <span>혼주 | 김성호<br><b>국민은행 654-21-0558-084</b></span>
+            <span>혼주 (신부 아버지) | 김성호<br><b>국민은행 654-21-0558-084</b></span>
             <button class="copy-btn" data-copy="국민은행 654-21-0558-084" onclick="copyAccount(this)">복사</button>
           </div>
           <div class="account-row">
-            <span>혼주 | 최순정<br><b>우리은행 1002-749-477831</b></span>
+            <span>혼주 (신부 어머니) | 최순정<br><b>우리은행 1002-749-477831</b></span>
             <button class="copy-btn" data-copy="우리은행 1002-749-477831" onclick="copyAccount(this)">복사</button>
           </div>
         </div>
@@ -271,6 +212,59 @@
 
   </div>
 </div>
+
+<!-- RSVP POPUP -->
+<div id="rsvp-popup" class="rsvp-popup-overlay" onclick="closeRsvpPopup()">
+  <div class="rsvp-popup-box" onclick="event.stopPropagation()">
+    <button type="button" class="rsvp-popup-close" onclick="closeRsvpPopup()">&times;</button>
+    <div class="panel-sub">RSVP</div>
+    <div class="panel-title">참석여부</div>
+    <p class="rsvp-intro">
+      더 나은 예식 준비와 원활한 하객 맞이를 위해 <br>참석 여부를 미리 알려주시면 감사하겠습니다.<br><br>
+      소중한 시간을 내어 참석해 주시는 모든 분들을 <br>정성껏 모실 수 있도록 참석 여부를 선택해 주세요.
+    </p>
+    <div class="rsvp-event-box">
+      🎁 <b>깜짝 이벤트!</b><br>
+      참석 여부와 무관하게 작성해주신 분들 중<br>
+      추첨을 통해 <b>다섯분</b>께 소정의 상품을 드려요~<br>
+      두근두근, 결과는 예식 후 개별 연락드릴게요 💌<br>
+      참석 인원 수만큼 추첨 응모 횟수에 반영됩니다!
+    </div>
+    <form id="rsvp-form" class="rsvp-form" onsubmit="submitRsvp(event)">
+      <div class="rsvp-row">
+        <div class="rsvp-side-group">
+          <button type="button" class="rsvp-side-btn selected" data-value="신랑측" onclick="selectSide(this)">신랑</button>
+          <button type="button" class="rsvp-side-btn" data-value="신부측" onclick="selectSide(this)">신부</button>
+        </div>
+        <span class="rsvp-side-label">측 지인 성함</span>
+      </div>
+      <div class="rsvp-name-row">
+        <input type="text" id="rsvp-name" class="rsvp-input" placeholder="이름을 입력해주세요">
+        <div class="rsvp-count-dropdown">
+          <button type="button" class="rsvp-input rsvp-count-select" id="rsvp-count-btn" onclick="toggleCountDropdown(event)">1명</button>
+          <input type="hidden" id="rsvp-count" value="1">
+          <ul class="rsvp-count-list" id="rsvp-count-list">
+            <li data-value="1" class="selected" onclick="selectCount(this)">1명</li>
+            <li data-value="2" onclick="selectCount(this)">2명</li>
+            <li data-value="3" onclick="selectCount(this)">3명</li>
+            <li data-value="4" onclick="selectCount(this)">4명</li>
+          </ul>
+        </div>
+      </div>
+      <div class="rsvp-attend-group">
+        <button type="button" class="rsvp-attend-btn" data-value="참석" onclick="selectAttendance(this)">참석</button>
+        <button type="button" class="rsvp-attend-btn" data-value="불참" onclick="selectAttendance(this)">불참</button>
+      </div>
+      <button type="submit" class="rsvp-submit-btn">제출하기</button>
+    </form>
+    <p id="rsvp-status" class="rsvp-status"></p>
+  </div>
+</div>
+
+<!-- RSVP FLOATING REOPEN BUTTON -->
+<button type="button" id="rsvp-float-btn" class="rsvp-float-btn" onclick="openRsvpPopup()" style="display:none;">
+  🎁 깜짝 이벤트!
+</button>
 
 <!-- RSVP RESULT MODAL -->
 <div id="rsvp-result-modal" class="rsvp-result-overlay" onclick="closeRsvpModal()">
@@ -286,6 +280,7 @@
   <button class="modal-arrow modal-arrow-left" onclick="modalNav(-1, event)">&#10094;</button>
   <img class="modal-content" id="modal-img" alt="확대 이미지" onclick="event.stopPropagation()">
   <button class="modal-arrow modal-arrow-right" onclick="modalNav(1, event)">&#10095;</button>
+  <div class="modal-counter" id="modal-counter"></div>
 </div>
 
 <script src="script.js"></script>

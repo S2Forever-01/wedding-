@@ -7,9 +7,7 @@ document.addEventListener('dragstart', function (e) {
   if (e.target.tagName === 'IMG') e.preventDefault();
 });
 
-function openEnvelope() {
-  document.getElementById('envelope').classList.add('opened');
-  document.getElementById('envelope-flap').classList.add('open');
+function tryPlayMusic() {
   const audio = document.getElementById('bgm');
   const label = document.getElementById('music-label');
   audio.play().then(() => {
@@ -18,6 +16,14 @@ function openEnvelope() {
     label.textContent = 'Off';
   });
 }
+tryPlayMusic();
+
+// Browsers block autoplay-with-sound until the user interacts with the page;
+// retry once on the first click anywhere so music still starts smoothly.
+document.addEventListener('click', function unlockMusicOnce() {
+  if (document.getElementById('bgm').paused) tryPlayMusic();
+  document.removeEventListener('click', unlockMusicOnce);
+}, { once: true });
 
 function toggleMusic() {
   const audio = document.getElementById('bgm');
@@ -87,6 +93,10 @@ const GALLERY_PHOTOS = [
 let modalIndex = 0;
 let modalScrollY = 0;
 
+function updateModalCounter() {
+  document.getElementById('modal-counter').textContent = `${modalIndex + 1} / ${GALLERY_PHOTOS.length}`;
+}
+
 function openModal(index) {
   modalIndex = index;
   modalScrollY = window.scrollY || document.documentElement.scrollTop;
@@ -95,12 +105,14 @@ function openModal(index) {
   document.body.style.width = '100%';
   document.getElementById('image-modal').style.display = 'flex';
   document.getElementById('modal-img').src = GALLERY_PHOTOS[modalIndex];
+  updateModalCounter();
 }
 
 function modalNav(dir, event) {
   event.stopPropagation();
   modalIndex = (modalIndex + dir + GALLERY_PHOTOS.length) % GALLERY_PHOTOS.length;
   document.getElementById('modal-img').src = GALLERY_PHOTOS[modalIndex];
+  updateModalCounter();
 }
 
 function closeModal() {
@@ -118,19 +130,24 @@ function closeModal() {
   let startX = 0;
   let startY = 0;
   let swiped = false;
+  let singleTouch = false;
 
   modal.addEventListener('touchstart', (e) => {
-    if (e.touches.length !== 1) return;
+    singleTouch = e.touches.length === 1;
+    if (!singleTouch) return;
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
     swiped = false;
   }, { passive: true });
 
   modal.addEventListener('touchmove', (e) => {
+    // Leave multi-touch alone so the browser's native pinch-to-zoom still works.
+    if (!singleTouch || e.touches.length > 1) return;
     e.preventDefault();
   }, { passive: false });
 
   modal.addEventListener('touchend', (e) => {
+    if (!singleTouch) return;
     const touch = e.changedTouches[0];
     const dx = touch.clientX - startX;
     const dy = touch.clientY - startY;
@@ -153,6 +170,20 @@ function closeModal() {
 function highlightOnes(text) {
   return text.replace(/1/g, '<span class="lucky-one">1</span>');
 }
+
+function openRsvpPopup() {
+  document.getElementById('rsvp-popup').style.display = 'flex';
+  document.getElementById('rsvp-float-btn').style.display = 'none';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeRsvpPopup() {
+  document.getElementById('rsvp-popup').style.display = 'none';
+  document.getElementById('rsvp-float-btn').style.display = 'flex';
+  document.body.style.overflow = '';
+}
+// Shown automatically on page load; no tab entry point anymore.
+openRsvpPopup();
 
 function openRsvpModal(html) {
   document.getElementById('rsvp-result-message').innerHTML = html;
@@ -244,6 +275,7 @@ function submitRsvp(event) {
   })
     .then(() => {
       status.textContent = '';
+      closeRsvpPopup();
       if (selectedAttendance === '참석') {
         openRsvpModal(
           `감사합니다.<br>${highlightOnes('11월 1일 1요일 오후 1시')}에 만나요~` +
