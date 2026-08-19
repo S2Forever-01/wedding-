@@ -182,8 +182,6 @@ function closeRsvpPopup() {
   document.getElementById('rsvp-float-btn').style.display = 'flex';
   document.body.style.overflow = '';
 }
-// Shown automatically on page load; no tab entry point anymore.
-openRsvpPopup();
 
 function openRsvpModal(html) {
   document.getElementById('rsvp-result-message').innerHTML = html;

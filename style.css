@@ -396,23 +396,36 @@ html, body {
 }
 
 /* rsvp */
+.rsvp-schedule {
+  text-align: center;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #4a3540;
+  line-height: 1.5;
+  background: #fdf1f4;
+  border-radius: 10px;
+  padding: 9px 10px;
+  margin: 0 0 12px;
+  white-space: nowrap;
+}
 .rsvp-intro {
   text-align: center;
-  font-size: 13.5px;
+  font-size: 12.5px;
   color: #8f6f78;
-  line-height: 1.9;
-  margin: 0 0 30px;
+  line-height: 1.6;
+  margin: 0 0 12px;
 }
 .rsvp-event-box {
   text-align: center;
-  font-size: 13px;
-  line-height: 1.8;
+  font-size: 12px;
+  line-height: 1.55;
   color: #a5717f;
   background: linear-gradient(135deg, #fdf1f4, #fdf6e8);
   border: 1.5px dashed #e8b6c4;
   border-radius: 12px;
-  padding: 16px 14px;
-  margin: 0 0 24px;
+  padding: 12px 12px;
+  margin: 0 0 14px;
 }
 .rsvp-event-box b {
   color: #c76f8b;
@@ -420,7 +433,7 @@ html, body {
 .rsvp-form {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 9px;
 }
 .rsvp-row {
   display: flex;
@@ -435,7 +448,7 @@ html, body {
 .rsvp-side-btn {
   flex: 0 0 auto;
   width: 70px;
-  padding: 12px 0;
+  padding: 9px 0;
   border: 1px solid #f6dbe3;
   border-radius: 8px;
   background: #fff;
@@ -456,7 +469,7 @@ html, body {
 }
 .rsvp-input {
   width: 100%;
-  padding: 12px 14px;
+  padding: 9px 12px;
   border: 1px solid #f6dbe3;
   border-radius: 8px;
   font-size: 14px;
@@ -526,7 +539,7 @@ html, body {
 }
 .rsvp-attend-btn {
   flex: 1;
-  padding: 12px;
+  padding: 9px;
   border: 1px solid #f6dbe3;
   border-radius: 8px;
   background: #fdf1f4;
@@ -542,8 +555,8 @@ html, body {
   border-color: #f2a9bb;
 }
 .rsvp-submit-btn {
-  margin-top: 6px;
-  padding: 14px;
+  margin-top: 2px;
+  padding: 11px;
   border: none;
   border-radius: 999px;
   background: #f2a9bb;
@@ -558,11 +571,11 @@ html, body {
   cursor: not-allowed;
 }
 .rsvp-status {
-  margin-top: 14px;
+  margin-top: 8px;
   text-align: center;
   font-size: 13px;
   color: #a5717f;
-  min-height: 18px;
+  min-height: 16px;
 }
 
 /* footer */
@@ -638,26 +651,32 @@ html, body {
 
 /* rsvp popup */
 .rsvp-popup-overlay {
-  display: flex;
+  display: none;
   position: fixed;
   z-index: 9998;
   inset: 0;
   background: rgba(0, 0, 0, 0.55);
   justify-content: center;
   align-items: center;
-  padding: 24px;
+  padding: 16px;
 }
 .rsvp-popup-box {
   position: relative;
   background: #fffbfc;
   border-radius: 18px;
-  padding: 40px 28px 32px;
+  padding: 26px 20px 18px;
   max-width: 400px;
   width: 100%;
-  max-height: 88vh;
+  max-height: 96vh;
   overflow-y: auto;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
   animation: rsvp-pop 0.35s ease;
+}
+.rsvp-popup-box .panel-sub {
+  margin-bottom: 4px;
+}
+.rsvp-popup-box .panel-title {
+  margin-bottom: 10px;
 }
 .rsvp-popup-close {
   position: absolute;
