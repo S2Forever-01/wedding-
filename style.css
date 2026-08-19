@@ -405,27 +405,29 @@ html, body {
   line-height: 1.5;
   background: #fdf1f4;
   border-radius: 10px;
-  padding: 9px 10px;
-  margin: 0 0 12px;
+  padding: 12px 14px;
+  margin: 0 0 18px;
   white-space: nowrap;
 }
 .rsvp-intro {
   text-align: center;
-  font-size: 12.5px;
+  font-size: 13.5px;
+  letter-spacing: 0.02em;
   color: #8f6f78;
-  line-height: 1.6;
-  margin: 0 0 12px;
+  line-height: 1.8;
+  margin: 0 0 20px;
 }
 .rsvp-event-box {
   text-align: center;
-  font-size: 12px;
-  line-height: 1.55;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  line-height: 1.8;
   color: #a5717f;
   background: linear-gradient(135deg, #fdf1f4, #fdf6e8);
   border: 1.5px dashed #e8b6c4;
   border-radius: 12px;
-  padding: 12px 12px;
-  margin: 0 0 14px;
+  padding: 16px 14px;
+  margin: 0 0 20px;
 }
 .rsvp-event-box b {
   color: #c76f8b;
@@ -433,7 +435,7 @@ html, body {
 .rsvp-form {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 12px;
 }
 .rsvp-row {
   display: flex;
@@ -448,7 +450,7 @@ html, body {
 .rsvp-side-btn {
   flex: 0 0 auto;
   width: 70px;
-  padding: 9px 0;
+  padding: 11px 0;
   border: 1px solid #f6dbe3;
   border-radius: 8px;
   background: #fff;
@@ -469,7 +471,7 @@ html, body {
 }
 .rsvp-input {
   width: 100%;
-  padding: 9px 12px;
+  padding: 11px 13px;
   border: 1px solid #f6dbe3;
   border-radius: 8px;
   font-size: 14px;
@@ -539,7 +541,7 @@ html, body {
 }
 .rsvp-attend-btn {
   flex: 1;
-  padding: 9px;
+  padding: 11px;
   border: 1px solid #f6dbe3;
   border-radius: 8px;
   background: #fdf1f4;
@@ -555,8 +557,8 @@ html, body {
   border-color: #f2a9bb;
 }
 .rsvp-submit-btn {
-  margin-top: 2px;
-  padding: 11px;
+  margin-top: 4px;
+  padding: 13px;
   border: none;
   border-radius: 999px;
   background: #f2a9bb;
@@ -571,11 +573,11 @@ html, body {
   cursor: not-allowed;
 }
 .rsvp-status {
-  margin-top: 8px;
+  margin-top: 10px;
   text-align: center;
   font-size: 13px;
   color: #a5717f;
-  min-height: 16px;
+  min-height: 18px;
 }
 
 /* footer */
@@ -664,7 +666,7 @@ html, body {
   position: relative;
   background: #fffbfc;
   border-radius: 18px;
-  padding: 26px 20px 18px;
+  padding: 34px 24px 26px;
   max-width: 400px;
   width: 100%;
   max-height: 96vh;
@@ -673,10 +675,10 @@ html, body {
   animation: rsvp-pop 0.35s ease;
 }
 .rsvp-popup-box .panel-sub {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 .rsvp-popup-box .panel-title {
-  margin-bottom: 10px;
+  margin-bottom: 18px;
 }
 .rsvp-popup-close {
   position: absolute;
