@@ -13,6 +13,14 @@ html, body {
   min-height: 100%;
   background: #fbeef2;
   font-family: 'Noto Sans KR', sans-serif;
+  /* 기기/OS의 "글자 크기" 접근성 설정에 따라 브라우저가 폰트를
+     임의로 확대하는 것을 막아, 모든 기종에서 줄바꿈 위치를 동일하게 유지 */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* 한글은 어절 단위로 줄바꿈하고, 불가피할 때만 강제 줄바꿈 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 @keyframes floatIn {
@@ -299,6 +307,40 @@ html, body {
   font-size: 14px;
   color: #584750;
   line-height: 1.8;
+}
+.info-label-block,
+.info-value-block {
+  grid-column: 1 / -1;
+}
+.info-value-block {
+  margin-top: -8px;
+}
+.parking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+.parking-table th,
+.parking-table td {
+  padding: 6px 10px;
+  border: 1px solid #f0d3db;
+  font-weight: 400;
+  text-align: center;
+}
+.parking-table th {
+  background: #fdf1f4;
+  color: #c9738d;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.parking-table th:first-child {
+  width: 62px;
+}
+.parking-note {
+  font-size: 12.5px;
+  color: #8f6f78;
+  line-height: 1.5;
 }
 .info-label {
   color: #c9738d;
