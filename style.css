@@ -147,7 +147,7 @@ html, body {
 /* ===== TABS ===== */
 .tabs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 6px;
   padding: 14px 8px;
   background: #fffbfc;
@@ -231,6 +231,37 @@ html, body {
   white-space: nowrap;
 }
 .name-hl { color: #c9738d; font-weight: 700; }
+.invitation-info {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid #f6dbe3;
+}
+.invitation-info-card {
+  background: #fdf1f4;
+  border-radius: 14px;
+  padding: 22px 20px 20px;
+  text-align: center;
+}
+.invitation-info-date {
+  font-size: 16px;
+  font-weight: 700;
+  color: #4a3540;
+  margin-bottom: 6px;
+}
+.invitation-info-place {
+  font-size: 16px;
+  color: #a5717f;
+  margin-bottom: 18px;
+}
+.invitation-info-hint {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 700;
+  color: #4a3540;
+  margin-bottom: 14px;
+}
+.invitation-info-card .map-buttons { margin-top: 0; }
+.invitation-info-card .map-buttons-desc { margin-bottom: 0; }
 
 /* gallery */
 [data-tab-panel="1"] { padding: 40px 20px; }
@@ -251,15 +282,20 @@ html, body {
 /* transport / venue info lists */
 .transport-notice {
   text-align: center;
+  background: #fdf1f4;
+  border-radius: 10px;
+  padding: 12px 14px;
   margin-bottom: 20px;
-  line-height: 1.8;
+  line-height: 1.7;
   color: #8f6f78;
-  font-size: 13.5px;
+  font-size: 13px;
 }
 .info-list {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 14px;
+  row-gap: 18px;
+  align-items: baseline;
   font-size: 14px;
   color: #584750;
   line-height: 1.8;
@@ -267,6 +303,7 @@ html, body {
 .info-label {
   color: #c9738d;
   font-weight: 700;
+  white-space: nowrap;
 }
 .map-box {
   width: 100%;
@@ -335,12 +372,25 @@ html, body {
   background: #fdf1f4;
   border-radius: 10px;
   padding: 14px 16px;
+  margin-top: 18px;
   font-size: 13px;
   color: #a5717f;
+  text-align: center;
+}
+.subsection {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid #f6dbe3;
+}
+.subsection-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #4a3540;
+  margin-bottom: 18px;
 }
 
 /* gift */
-[data-tab-panel="4"] { padding: 48px 32px 64px; }
+[data-tab-panel="3"] { padding: 48px 32px 64px; }
 .gift-intro {
   text-align: center;
   font-size: 13.5px;
@@ -691,31 +741,6 @@ html, body {
   color: #b98a97;
   cursor: pointer;
 }
-.rsvp-float-btn {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 40;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  border: none;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #f97fa0, #f2a9bb);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-  font-family: inherit;
-  padding: 13px 20px;
-  box-shadow: 0 6px 18px rgba(210, 120, 150, 0.45);
-  cursor: pointer;
-  animation: rsvp-float-bounce 1.8s ease-in-out infinite;
-}
-@keyframes rsvp-float-bounce {
-  0%, 100% { transform: translateY(0) scale(1); box-shadow: 0 6px 18px rgba(210, 120, 150, 0.45); }
-  50% { transform: translateY(-5px) scale(1.05); box-shadow: 0 10px 24px rgba(210, 120, 150, 0.55); }
-}
-
 /* rsvp result popup */
 .rsvp-result-overlay {
   display: none;

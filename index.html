@@ -56,10 +56,9 @@
     <!-- TAB NAV -->
     <div class="tabs" data-screen-label="Tabs" id="tab-nav">
       <button class="tab-btn active" data-tab="0" onclick="setTab(0)">인사말</button>
-      <button class="tab-btn" data-tab="1" onclick="setTab(1)">사진첩</button>
-      <button class="tab-btn" data-tab="3" onclick="setTab(3)">식장</button>
-      <button class="tab-btn" data-tab="2" onclick="setTab(2)">교통</button>
-      <button class="tab-btn" data-tab="4" onclick="setTab(4)">마음 전하실 곳</button>
+      <button class="tab-btn" data-tab="1" onclick="setTab(1); openRsvpPopup()">사진첩</button>
+      <button class="tab-btn" data-tab="2" onclick="setTab(2)">식장 안내</button>
+      <button class="tab-btn" data-tab="3" onclick="setTab(3)">마음 전하실 곳</button>
     </div>
 
     <!-- TAB PANEL 0: INVITATION -->
@@ -84,6 +83,19 @@
           <div>
             <span class="family-mark"></span><span class="family-text"><b>김성호 · 최순정</b> 의 장녀 <span class="name-hl">김영화</span></span>
           </div>
+        </div>
+      </div>
+      <div class="invitation-info">
+        <div class="invitation-info-hint">💡 위치를 확인해보세요!</div>
+        <div class="invitation-info-card">
+          <div class="invitation-info-date">2026. 11. 01 일요일 오후 1시</div>
+          <div class="invitation-info-place">국방컨벤션 | 에메랄드홀</div>
+          <div class="map-buttons">
+            <a href="https://place.map.kakao.com/152313844" target="_blank" class="map-btn kakao">카카오맵</a>
+            <a href="https://naver.me/GI3hfgsb" target="_blank" class="map-btn naver">네이버지도</a>
+            <a href="https://tmap.life/bb3de44a" target="_blank" class="map-btn tmap">T맵</a>
+          </div>
+          <div class="map-buttons-desc">버튼을 누르시면 각 지도 앱에서 웨딩홀 주소로 바로 연결됩니다.</div>
         </div>
       </div>
     </div>
@@ -120,8 +132,8 @@
       </div>
     </div>
 
-    <!-- TAB PANEL 3: VENUE -->
-    <div class="tab-panel" data-tab-panel="3" data-screen-label="Venue" style="display:none;">
+    <!-- TAB PANEL 2: VENUE (+ TRANSPORT) -->
+    <div class="tab-panel" data-tab-panel="2" data-screen-label="Venue" style="display:none;">
       <div class="panel-sub">HALL INFORMATION</div>
       <div class="panel-title">식장 안내</div>
       <div class="venue-photo">
@@ -129,39 +141,37 @@
         <span class="venue-photo-badge">추후 결혼식 당일 참고하실 식장 구조 이미지로 교체 예정입니다. </span>
       </div>
       <div class="info-list">
-        <div><span class="info-label">예&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;식</span> 1층 에메랄드홀 오후 1시</div>
-        <div><span class="info-label">연 회 장</span> 2층 태극홀 · 3층 충무홀 (미정)<br>이용 시간은 <span class="hl">오후 12시 15분 ~ 2시 45분</span> 입니다. <br>점심 식사 후 1시 예식 관람하시는 것도 좋은 계획이에요!</div>        <div class="tip-box">Tip! <br>식장 맞은편 전쟁기념관 공원 예쁘고 산책하기 좋아요 ♡</div>
+        <span class="info-label">예식</span><span class="info-value">1층 에메랄드홀 오후 1시</span>
+        <span class="info-label">연회장</span><span class="info-value">2층 태극홀 · 3층 충무홀 (미정)<br>이용 시간은 <span class="hl">오후 12시 15분 ~ 2시 45분</span> 입니다. <br>점심 식사 후 1시 예식 관람하시는 것도 좋은 계획이에요!</span>
+      </div>
+      <div class="tip-box">Tip! 식장 맞은편 전쟁기념관 공원 예쁘고 산책하기 좋아요 ♡</div>
+
+      <div class="subsection">
+        <div class="subsection-title">🚗 교통 안내</div>
+        <div class="transport-notice">
+          예식장 주변 교통이 혼잡하오니,<br>가능하시다면 대중교통 이용을 권장드립니다.
+        </div>
+        <div class="map-box">
+          <img src="images/map.PNG" alt="map">
+        </div>
+        <div class="map-buttons">
+          <a href="https://place.map.kakao.com/152313844" target="_blank" class="map-btn kakao">카카오맵</a>
+          <a href="https://naver.me/GI3hfgsb" target="_blank" class="map-btn naver">네이버지도</a>
+          <a href="https://tmap.life/bb3de44a" target="_blank" class="map-btn tmap">T맵</a>
+        </div>
+        <div class="map-buttons-desc">버튼을 누르시면 각 지도 앱에서 웨딩홀 주소로 바로 연결됩니다.</div>
+        <div class="info-list">
+          <span class="info-label">주소</span><span class="info-value">서울 용산구 이태원로 22, 국방컨벤션</span>
+          <span class="info-label">지하철</span><span class="info-value">4/6호선 삼각지역 13번 출구 (도보 5분)<br>6호선 녹사평역 4번 출구 (도보 9분)</span>
+          <span class="info-label">주차</span><span class="info-value">웨딩홀 2시간 무료 주차 (자동 등록)<br>※ 만차 시 홀 주차장 입구에서 전쟁기념관 주차장 안내문 수령 후에 전쟁기념관 주차장 이용 가능합니다! (안내데스크 주차등록)</span>
+          <span class="info-label">서울역 이용 시</span><span class="info-value">421번 버스 전쟁기념관 하차 (8분)<br>4호선 삼각지역 하차 (3분)</span>
+          <span class="info-label">셔틀버스</span><span class="info-value">신부측 대절 버스 창원시 왕복 운행 예정</span>
+        </div>
       </div>
     </div>
 
-    <!-- TAB PANEL 2: TRANSPORT -->
-    <div class="tab-panel" data-tab-panel="2" data-screen-label="Transport" style="display:none;">
-      <div class="panel-sub">TRANSPORTATION</div>
-      <div class="panel-title">교통 안내</div>
-
-      <div class="transport-notice">
-        예식장 주변 교통이 혼잡하오니,<br>가능하시다면 대중교통 이용을 권장드립니다.
-      </div>
-      <div class="map-box">
-        <img src="images/map.PNG" alt="map">
-      </div>
-      <div class="map-buttons">
-        <a href="https://place.map.kakao.com/152313844" target="_blank" class="map-btn kakao">카카오맵</a>
-        <a href="https://naver.me/GI3hfgsb" target="_blank" class="map-btn naver">네이버지도</a>
-        <a href="https://tmap.life/bb3de44a" target="_blank" class="map-btn tmap">T맵</a>
-      </div>
-      <div class="map-buttons-desc">버튼을 누르시면 각 지도 앱에서 웨딩홀 주소로 바로 연결됩니다.</div>
-      <div class="info-list">
-        <div><span class="info-label">주&nbsp;&nbsp;&nbsp;&nbsp;소</span> 서울 용산구 이태원로 22, 국방컨벤션</div>
-        <div><span class="info-label">지 하 철</span> <br> 4/6호선 삼각지역 13번 출구 (도보 5분)<br>6호선 녹사평역 4번 출구 (도보 9분)</div>
-        <div><span class="info-label">주&nbsp;&nbsp;&nbsp;&nbsp;차</span> <br> 웨딩홀 2시간 무료 주차 (자동 등록)<br>※ 만차 시 홀 주차장 입구에서 전쟁기념관 주차장 안내문 수령 후에 전쟁기념관 주차장 이용 가능합니다! (안내데스크 주차등록)</div>
-        <div><span class="info-label">서울역 이용 시</span> <br> 421번 버스 전쟁기념관 하차 (8분)<br>4호선 삼각지역 하차 (3분)</div>
-        <div><span class="info-label">셔틀버스</span> 신부측 대절 버스 창원시 왕복 운행 예정</div>
-      </div>
-    </div>
-
-    <!-- TAB PANEL 4: GIFT -->
-    <div class="tab-panel" data-tab-panel="4" data-screen-label="Gift" style="display:none;">
+    <!-- TAB PANEL 3: GIFT -->
+    <div class="tab-panel" data-tab-panel="3" data-screen-label="Gift" style="display:none;">
       <div class="panel-sub">INFORMATION</div>
       <div class="panel-title">마음 전하실 곳</div>
       <p class="gift-intro">
@@ -260,11 +270,6 @@
     <p id="rsvp-status" class="rsvp-status"></p>
   </div>
 </div>
-
-<!-- RSVP FLOATING REOPEN BUTTON -->
-<button type="button" id="rsvp-float-btn" class="rsvp-float-btn" onclick="openRsvpPopup()">
-  🎁 깜짝 이벤트!
-</button>
 
 <!-- RSVP RESULT MODAL -->
 <div id="rsvp-result-modal" class="rsvp-result-overlay" onclick="closeRsvpModal()">

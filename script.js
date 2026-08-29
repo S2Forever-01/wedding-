@@ -173,13 +173,11 @@ function highlightOnes(text) {
 
 function openRsvpPopup() {
   document.getElementById('rsvp-popup').style.display = 'flex';
-  document.getElementById('rsvp-float-btn').style.display = 'none';
   document.body.style.overflow = 'hidden';
 }
 
 function closeRsvpPopup() {
   document.getElementById('rsvp-popup').style.display = 'none';
-  document.getElementById('rsvp-float-btn').style.display = 'flex';
   document.body.style.overflow = '';
 }
 
